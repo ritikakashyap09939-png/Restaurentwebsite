@@ -79,7 +79,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-bold text-foreground mb-1">Phone</div>
-                    <div className="text-muted-foreground text-sm">+91 98765 43210<br />+91 11 2345 6789</div>
+                    <div className="text-muted-foreground text-sm">+91 98139 54399<br />+91 98968 54399</div>
                   </div>
                 </li>
 
@@ -109,7 +109,7 @@ export default function Contact() {
 
               <div className="mt-8 pt-8 border-t border-border">
                 <a 
-                  href="https://wa.me/919876543210" 
+                  href="https://wa.me/919813954399" 
                   target="_blank" 
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-3 rounded-md font-bold hover:bg-[#20b858] transition-colors"
