@@ -100,7 +100,7 @@ export default function Contact() {
                   <div>
                     <div className="font-bold text-foreground mb-1">Hours</div>
                     <div className="text-muted-foreground text-sm">
-                      Mon-Fri: 11:00 AM - 11:00 PM<br />
+                      Mon-Fri: 8:00 AM - 6:00 PM<br />
                       Sat-Sun: 10:00 AM - 11:30 PM
                     </div>
                   </div>
