@@ -69,7 +69,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-bold text-foreground mb-1">Location</div>
-                    <div className="text-muted-foreground text-sm">123 Heritage Marg, Civil Lines<br />New Delhi, India 110054</div>
+                    <div className="text-muted-foreground text-sm">Habri Road, Gausala Market<br />Near Jashan Complex</div>
                   </div>
                 </li>
                 
