@@ -1,0 +1,66 @@
+Build a professional, multi-page restaurant + banquet hall website for 
+"Nirmal Family Restaurant and Party Hall" — a family restaurant that also 
+hosts events like birthdays, weddings, engagements, and corporate parties.
+
+TECH STACK:
+- React with Tailwind CSS
+- Fully responsive (mobile, tablet, desktop)
+- Clean, modern, elegant design with a warm color palette 
+  (maroon/deep red, gold, cream/off-white) that feels premium and inviting
+
+PAGES REQUIRED:
+
+1. Home
+   - Hero section with restaurant name, tagline, and a "Book Now" / 
+     "Reserve a Table" button
+   - Highlights section: why choose us (family recipes, hygienic, 
+     spacious hall, catering, etc.)
+   - Featured dishes / photos
+   - Quick intro to the Party Hall with a "View Details" link
+   - Customer testimonials preview
+   - Call-to-action footer with phone number and address
+
+2. About Us
+   - Restaurant's story and history
+   - Family values and mission
+   - Photos of the owners/team (placeholder images)
+
+3. Menu
+   - Categorized menu: Starters, Main Course (Veg/Non-Veg), Breads, 
+     Rice/Biryani, Desserts, Beverages
+   - Simple card/grid layout with dish name, short description, and price
+   - Filter tabs for Veg / Non-Veg
+
+4. Party Hall / Banquet
+   - Hall details: capacity, size, AC/non-AC options
+   - Event types supported (weddings, birthdays, engagements, 
+     corporate events, kitty parties)
+   - Package details (decoration, catering, DJ, etc. — placeholder info)
+   - Photo gallery of the hall setup
+   - Enquiry/Booking form (name, phone, event date, guest count, message)
+
+5. Gallery
+   - Photo grid/carousel of food, restaurant interior, and past events
+   - Lightbox view on click
+
+6. Testimonials
+   - Customer reviews with names and star ratings
+
+7. Contact Us
+   - Address with embedded Google Map
+   - Phone number, email, WhatsApp click-to-chat button
+   - Opening hours
+   - Contact form (name, email, phone, message)
+
+GLOBAL FEATURES:
+- Sticky navigation bar with logo and all page links
+- Mobile-friendly hamburger menu
+- Footer with quick links, social media icons, address, and copyright
+- Smooth scroll animations and hover effects on buttons/cards
+- Basic SEO meta tags (title, description) for each page
+- Fast loading, clean typography (elegant font for headings, readable 
+  font for body text)
+
+Use placeholder text and stock-style images where actual content isn't 
+provided, but keep everything organized so I can easily replace them 
+with real photos, menu items, and contact details later.
