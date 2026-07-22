@@ -44,8 +44,8 @@ export default function Home() {
             <span className="text-secondary font-medium tracking-[0.3em] uppercase text-sm md:text-base block mb-4">
               Tradition in Every Bite
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white font-bold mb-6 leading-tight drop-shadow-lg">
-              Nirmal
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white font-bold mb-6 leading-tight drop-shadow-lg">
+              Nirmal Family Restaurant and Party Hall
             </h1>
             <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 font-light drop-shadow">
               A heritage of authentic Indian flavors, serving families with love, warmth, and spices passed down through generations.
