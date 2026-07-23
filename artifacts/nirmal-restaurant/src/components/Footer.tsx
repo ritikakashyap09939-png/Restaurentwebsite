@@ -47,11 +47,11 @@ export default function Footer() {
             <ul className="space-y-4 text-[#d0c6b3]">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-secondary shrink-0 mt-1" />
-                <span>123 Heritage Marg, Civil Lines<br />New Delhi, India 110054</span>
+                <span>Habri Road, Gausala Market<br />Near Jashan Complex</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-secondary shrink-0" />
-                <span>+91 98765 43210</span>
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-secondary shrink-0 mt-1" />
+                <span>+91 98139 54399<br />+91 98968 54399</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary shrink-0" />
@@ -66,7 +66,7 @@ export default function Footer() {
             <ul className="space-y-3 text-[#d0c6b3]">
               <li className="flex justify-between border-b border-white/10 pb-2">
                 <span>Monday - Friday</span>
-                <span className="text-secondary font-medium">11:00 AM - 11:00 PM</span>
+                <span className="text-secondary font-medium">8:00 AM - 6:00 PM</span>
               </li>
               <li className="flex justify-between border-b border-white/10 pb-2">
                 <span>Saturday - Sunday</span>
