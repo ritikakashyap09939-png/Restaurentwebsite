@@ -30,33 +30,43 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <h2 className="text-3xl font-serif font-bold text-primary mb-6">A Legacy of Flavor</h2>
+            <h2 className="text-3xl font-serif font-bold text-primary mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
               <p>
-                What started in 1985 as a humble eatery with just five tables has blossomed into 
-                Nirmal Family Restaurant, a cornerstone of the community. Founded by the Sharma family, 
-                our restaurant was built on a simple philosophy: treat every guest like family and 
-                serve them the food we grew up loving.
+                In 2025, a small dream took shape — the dream of creating a place where flavor, warmth, 
+                and celebration come together. That dream became Neelam Restaurant &amp; Party Hall.
               </p>
               <p>
-                Our recipes aren't found in culinary textbooks; they are heirlooms passed down 
-                from our grandmother's kitchen. The secret to our signature Dal Makhani isn't 
-                just the spices—it's the patience of slow-cooking over a low flame for 12 hours.
+                We believe food is never just about filling a plate — it's about bringing people closer. 
+                With that belief, we built a space where traditional flavors meet modern hospitality. 
+                Every dish in our kitchen is prepared with care, using fresh ingredients and authentic 
+                spices, so every bite feels like home.
               </p>
               <p>
-                Today, the second and third generations of the Sharma family run the restaurant, 
-                blending modern culinary techniques with uncompromised traditional authenticity.
+                But Neelam is more than just a restaurant. Our elegant Party Hall is designed to be part 
+                of your most special moments — weddings, birthdays, anniversaries, or any family 
+                celebration. We believe every event deserves to be memorable, which is why our team 
+                takes care of every little detail, from décor to the quality of food on your table.
+              </p>
+              <p>
+                Since day one, we've had one simple goal — to make every guest feel like family. 
+                Welcoming you warmly, serving you our best, and being part of your happiest moments — 
+                that's what truly matters to us.
+              </p>
+              <p>
+                So the next time you're looking for great food and a place to celebrate — Neelam 
+                Restaurant &amp; Party Hall is waiting for you.
               </p>
             </div>
             
             <div className="mt-8 grid grid-cols-2 gap-6">
               <div className="border-l-4 border-secondary pl-4">
-                <div className="text-3xl font-bold text-primary">38+</div>
-                <div className="text-sm uppercase tracking-wider text-muted-foreground mt-1">Years of Service</div>
+                <div className="text-3xl font-bold text-primary">2025</div>
+                <div className="text-sm uppercase tracking-wider text-muted-foreground mt-1">Est. Year</div>
               </div>
               <div className="border-l-4 border-secondary pl-4">
-                <div className="text-3xl font-bold text-primary">1M+</div>
-                <div className="text-sm uppercase tracking-wider text-muted-foreground mt-1">Happy Guests</div>
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm uppercase tracking-wider text-muted-foreground mt-1">Guest Satisfaction</div>
               </div>
             </div>
           </motion.div>
