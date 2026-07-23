@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowRight, Star, Utensils, Users, Music } from 'lucide-react';
-import heroBg from '@assets/generated_images/hero-bg.jpg';
+const heroBg = '/images/exterior.jpg';
+const banquetWedding = '/images/hall-buffet.jpg';
+const weddingPhoto = '/images/wedding.jpg';
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
 import dishPaneer from '@assets/generated_images/dish-paneer-tikka.jpg';
 import dishButterChicken from '@assets/generated_images/dish-butter-chicken.jpg';
-import banquetWedding from '@assets/generated_images/banquet-wedding.jpg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -162,7 +163,7 @@ export default function Home() {
       {/* Banquet Hall Teaser */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary z-0" />
-        <div className="absolute inset-0 opacity-20 z-0 bg-cover bg-center" style={{ backgroundImage: `url(${banquetWedding})` }} />
+        <div className="absolute inset-0 opacity-30 z-0 bg-cover bg-center" style={{ backgroundImage: `url(${weddingPhoto})` }} />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="bg-white/95 backdrop-blur-sm max-w-2xl p-8 md:p-12 rounded-lg shadow-2xl">

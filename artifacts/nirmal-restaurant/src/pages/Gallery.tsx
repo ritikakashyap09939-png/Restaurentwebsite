@@ -3,16 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Images
-import heroBg from '@assets/generated_images/hero-bg.jpg';
+// Real restaurant photos
+const exterior = '/images/exterior.jpg';
+const hallBuffet = '/images/hall-buffet.jpg';
+const wedding = '/images/wedding.jpg';
+const hallDining = '/images/hall-dining.jpg';
+const hallDining2 = '/images/hall-dining2.jpg';
+
+// AI-generated food photos
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
 import dishButterChicken from '@assets/generated_images/dish-butter-chicken.jpg';
 import dishPaneerTikka from '@assets/generated_images/dish-paneer-tikka.jpg';
 import dishDalMakhani from '@assets/generated_images/dish-dal-makhani.jpg';
-import banquetWedding from '@assets/generated_images/banquet-wedding.jpg';
-import banquetCorporate from '@assets/generated_images/banquet-corporate.jpg';
-import teamPhoto from '@assets/generated_images/team-photo.jpg';
-import galleryInterior from '@assets/generated_images/gallery-interior.jpg';
 
 type GalleryImage = {
   id: string;
@@ -22,26 +24,26 @@ type GalleryImage = {
 };
 
 const images: GalleryImage[] = [
-  { id: '1', src: heroBg, alt: 'Restaurant Interior Night', category: 'Restaurant' },
-  { id: '2', src: dishBiryani, alt: 'Hyderabadi Dum Biryani', category: 'Food' },
-  { id: '3', src: banquetWedding, alt: 'Wedding Banquet Setup', category: 'Events' },
-  { id: '4', src: dishButterChicken, alt: 'Murgh Makhani', category: 'Food' },
-  { id: '5', src: galleryInterior, alt: 'Premium Dining Area', category: 'Restaurant' },
-  { id: '6', src: dishPaneerTikka, alt: 'Sizzling Paneer Tikka', category: 'Food' },
-  { id: '7', src: banquetCorporate, alt: 'Corporate Event Setup', category: 'Events' },
-  { id: '8', src: dishDalMakhani, alt: 'Rich Dal Makhani', category: 'Food' },
-  { id: '9', src: teamPhoto, alt: 'Our Welcoming Staff', category: 'Restaurant' },
+  { id: '1', src: exterior,      alt: 'Nirmal Restaurant — Main Entrance',        category: 'Restaurant' },
+  { id: '2', src: hallDining,    alt: 'Elegant Dining Hall Interior',              category: 'Restaurant' },
+  { id: '3', src: hallDining2,   alt: 'Party Hall — Evening Ambience',             category: 'Restaurant' },
+  { id: '4', src: hallBuffet,    alt: 'Grand Buffet Setup — Party Hall',           category: 'Events' },
+  { id: '5', src: wedding,       alt: 'Wedding Ceremony at Nirmal Party Hall',     category: 'Events' },
+  { id: '6', src: dishBiryani,   alt: 'Hyderabadi Dum Biryani',                   category: 'Food' },
+  { id: '7', src: dishButterChicken, alt: 'Murgh Makhani',                        category: 'Food' },
+  { id: '8', src: dishPaneerTikka,   alt: 'Sizzling Paneer Tikka',               category: 'Food' },
+  { id: '9', src: dishDalMakhani,    alt: 'Rich Dal Makhani',                     category: 'Food' },
 ];
 
-const categories = ['All', 'Food', 'Restaurant', 'Events'];
+const categories = ['All', 'Restaurant', 'Events', 'Food'];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const filteredImages = activeCategory === 'All' 
-    ? images 
+  const filteredImages = activeCategory === 'All'
+    ? images
     : images.filter(img => img.category === activeCategory);
 
   const openLightbox = (index: number) => {
@@ -88,8 +90,8 @@ export default function Gallery() {
                 onClick={() => setActiveCategory(category)}
                 className={cn(
                   "px-6 py-2 rounded-full text-sm font-medium transition-colors",
-                  activeCategory === category 
-                    ? "bg-primary text-white" 
+                  activeCategory === category
+                    ? "bg-primary text-white"
                     : "text-muted-foreground hover:text-primary"
                 )}
               >
@@ -99,11 +101,8 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Image Grid */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        {/* Image Grid — first real photo spans 2 columns */}
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredImages.map((image, index) => (
               <motion.div
@@ -113,18 +112,28 @@ export default function Gallery() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 key={image.id}
-                className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer bg-muted"
+                className={cn(
+                  "group relative overflow-hidden rounded-lg cursor-pointer bg-muted",
+                  // exterior photo gets a taller aspect to showcase the building
+                  image.id === '1' ? "aspect-video sm:col-span-2 lg:col-span-2" : "aspect-square"
+                )}
                 onClick={() => openLightbox(index)}
               >
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                {/* Category pill */}
+                <span className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                  {image.category}
+                </span>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
                   <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white">
                     <ZoomIn className="h-6 w-6" />
                   </div>
+                  <span className="text-white text-sm font-medium text-center px-4">{image.alt}</span>
                 </div>
               </motion.div>
             ))}
@@ -142,22 +151,22 @@ export default function Gallery() {
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={closeLightbox}
           >
-            <button 
+            <button
               className="absolute top-6 right-6 text-white/70 hover:text-white p-2 z-10"
               onClick={closeLightbox}
             >
               <X className="h-8 w-8" />
             </button>
 
-            <button 
+            <button
               className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-2 bg-black/20 hover:bg-black/40 rounded-full transition-all"
               onClick={prevImage}
             >
               <ChevronLeft className="h-10 w-10" />
             </button>
 
-            <div 
-              className="relative w-full max-w-5xl aspect-[4/3] md:aspect-video flex items-center justify-center"
+            <div
+              className="relative w-full max-w-5xl flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <motion.img
@@ -167,14 +176,14 @@ export default function Gallery() {
                 exit={{ opacity: 0, x: -20 }}
                 src={filteredImages[currentIndex].src}
                 alt={filteredImages[currentIndex].alt}
-                className="max-w-full max-h-[85vh] object-contain shadow-2xl"
+                className="max-w-full max-h-[85vh] object-contain shadow-2xl rounded-md"
               />
               <div className="absolute bottom-[-40px] left-0 right-0 text-center text-white/70 text-sm">
-                {filteredImages[currentIndex].alt} ({currentIndex + 1} / {filteredImages.length})
+                {filteredImages[currentIndex].alt} &nbsp;·&nbsp; {currentIndex + 1} / {filteredImages.length}
               </div>
             </div>
 
-            <button 
+            <button
               className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-2 bg-black/20 hover:bg-black/40 rounded-full transition-all"
               onClick={nextImage}
             >
