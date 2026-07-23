@@ -149,117 +149,169 @@ export default function About() {
         </div>
 
         {/* Certifications Section */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <p className="text-secondary font-semibold uppercase tracking-[3px] text-xs mb-3">Trusted & Verified</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Our Certifications & Licenses</h2>
-            <div className="w-24 h-1 bg-secondary mx-auto mb-6 rounded-full" />
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Nirmal Family Restaurant &amp; Party Hall operates under all required food safety, hygiene and municipal approvals — so you can host and dine with complete confidence.
-            </p>
-          </div>
+        <div className="mb-16 -mx-4 px-0">
+          {/* Dark maroon banner background */}
+          <div className="bg-[#3a0f1e] rounded-2xl overflow-hidden shadow-2xl">
+            {/* Top decorative border */}
+            <div className="h-1 w-full bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]" />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              {
-                title: 'FSSAI License',
-                desc: 'Food Safety & Standards Authority of India',
-                svg: (
-                  <svg viewBox="0 0 100 130" className="w-20 h-auto mx-auto mb-4">
-                    <path d="M50 8l35 14v28c0 26-15 46-35 58C30 96 15 76 15 50V22z" fill="#fff" stroke="#D9A441" strokeWidth="3"/>
-                    <circle cx="50" cy="46" r="26" fill="#F0CE85" opacity="0.35"/>
-                    <path d="M38 46c0-8 5-14 12-14s12 6 12 14-5 14-12 14" fill="none" stroke="#6B1F3A" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M50 32v28" stroke="#3F5A45" strokeWidth="3" strokeLinecap="round"/>
-                    <circle cx="50" cy="46" r="30" fill="none" stroke="#D9A441" strokeWidth="1.5" strokeDasharray="2 3"/>
-                  </svg>
-                ),
-              },
-              {
-                title: 'GST Registered',
-                desc: 'Goods & Services Tax Certificate',
-                svg: (
-                  <svg viewBox="0 0 100 130" className="w-20 h-auto mx-auto mb-4">
-                    <path d="M50 8l35 14v28c0 26-15 46-35 58C30 96 15 76 15 50V22z" fill="#fff" stroke="#D9A441" strokeWidth="3"/>
-                    <circle cx="50" cy="46" r="26" fill="#EAF1EA" opacity="0.6"/>
-                    <text x="50" y="53" fontFamily="serif" fontSize="24" fontWeight="700" fill="#3F5A45" textAnchor="middle">₹</text>
-                    <circle cx="50" cy="46" r="30" fill="none" stroke="#D9A441" strokeWidth="1.5" strokeDasharray="2 3"/>
-                  </svg>
-                ),
-              },
-              {
-                title: 'Trade License',
-                desc: 'Municipal Corporation Approval',
-                svg: (
-                  <svg viewBox="0 0 100 130" className="w-20 h-auto mx-auto mb-4">
-                    <path d="M50 8l35 14v28c0 26-15 46-35 58C30 96 15 76 15 50V22z" fill="#fff" stroke="#D9A441" strokeWidth="3"/>
-                    <circle cx="50" cy="46" r="26" fill="#F7E7C4" opacity="0.4"/>
-                    <rect x="34" y="40" width="32" height="20" rx="1.5" fill="none" stroke="#6B1F3A" strokeWidth="3"/>
-                    <path d="M34 40l6-8h20l6 8" fill="none" stroke="#6B1F3A" strokeWidth="3" strokeLinejoin="round"/>
-                    <circle cx="50" cy="46" r="30" fill="none" stroke="#D9A441" strokeWidth="1.5" strokeDasharray="2 3"/>
-                  </svg>
-                ),
-              },
-              {
-                title: 'Health / Eating House License',
-                desc: 'Issued by local Police / Health Dept.',
-                svg: (
-                  <svg viewBox="0 0 100 130" className="w-20 h-auto mx-auto mb-4">
-                    <path d="M50 8l35 14v28c0 26-15 46-35 58C30 96 15 76 15 50V22z" fill="#fff" stroke="#D9A441" strokeWidth="3"/>
-                    <circle cx="50" cy="46" r="26" fill="#F7DCE1" opacity="0.4"/>
-                    <path d="M50 32c-8-8-22-2-22 9 0 12 15 20 22 26 7-6 22-14 22-26 0-11-14-17-22-9z" fill="none" stroke="#6B1F3A" strokeWidth="3" strokeLinejoin="round"/>
-                    <circle cx="50" cy="46" r="30" fill="none" stroke="#D9A441" strokeWidth="1.5" strokeDasharray="2 3"/>
-                  </svg>
-                ),
-              },
-              {
-                title: 'Fire Safety NOC',
-                desc: 'Fire Department No-Objection Certificate',
-                svg: (
-                  <svg viewBox="0 0 100 130" className="w-20 h-auto mx-auto mb-4">
-                    <path d="M50 8l35 14v28c0 26-15 46-35 58C30 96 15 76 15 50V22z" fill="#fff" stroke="#D9A441" strokeWidth="3"/>
-                    <circle cx="50" cy="46" r="26" fill="#FBE7D4" opacity="0.5"/>
-                    <path d="M50 30c6 8-4 10-2 18 1 4 5 6 8 4 3 8-4 16-12 16-9 0-15-7-14-15 1-9 8-10 6-18 4 2 6-1 6-5 3 2 6 0 8 0z" fill="none" stroke="#6B1F3A" strokeWidth="2.5" strokeLinejoin="round"/>
-                    <circle cx="50" cy="46" r="30" fill="none" stroke="#D9A441" strokeWidth="1.5" strokeDasharray="2 3"/>
-                  </svg>
-                ),
-              },
-              {
-                title: 'Shop & Establishment Registration',
-                desc: 'State Labour Department Registration',
-                svg: (
-                  <svg viewBox="0 0 100 130" className="w-20 h-auto mx-auto mb-4">
-                    <path d="M50 8l35 14v28c0 26-15 46-35 58C30 96 15 76 15 50V22z" fill="#fff" stroke="#D9A441" strokeWidth="3"/>
-                    <circle cx="50" cy="46" r="26" fill="#E9E3F5" opacity="0.4"/>
-                    <rect x="32" y="34" width="36" height="26" rx="2" fill="none" stroke="#6B1F3A" strokeWidth="3"/>
-                    <path d="M38 34v-4h24v4" fill="none" stroke="#6B1F3A" strokeWidth="3"/>
-                    <line x1="32" y1="46" x2="68" y2="46" stroke="#6B1F3A" strokeWidth="2"/>
-                    <circle cx="50" cy="46" r="30" fill="none" stroke="#D9A441" strokeWidth="1.5" strokeDasharray="2 3"/>
-                  </svg>
-                ),
-              },
-            ].map((cert, i) => (
-              <motion.div
-                key={cert.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-2xl p-6 text-center shadow-sm border border-[#f0e2c8] hover:-translate-y-1 transition-transform duration-200"
-              >
-                {cert.svg}
-                <h3 className="font-serif font-bold text-[#4A1428] text-base mb-1 leading-tight">{cert.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-3">{cert.desc}</p>
-                <span className="inline-block text-[10px] font-semibold uppercase tracking-wide text-[#3F5A45] bg-[#eaf1ea] border border-dashed border-[#3F5A45] rounded-full px-3 py-1">
-                  Sample badge
-                </span>
-              </motion.div>
-            ))}
-          </div>
+            <div className="px-8 md:px-14 py-14">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="h-px w-16 bg-[#D4AF37]/40" />
+                  <ShieldCheck className="h-5 w-5 text-[#D4AF37]" />
+                  <div className="h-px w-16 bg-[#D4AF37]/40" />
+                </div>
+                <p className="text-[#D4AF37] font-semibold uppercase tracking-[4px] text-xs mb-3">Trusted & Verified</p>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+                  Our Certifications & Licenses
+                </h2>
+                <p className="text-[#c8b9a8] max-w-2xl mx-auto text-sm leading-relaxed">
+                  Nirmal Family Restaurant &amp; Party Hall operates under all required food safety, hygiene and
+                  municipal approvals — so you can host and dine with complete confidence.
+                </p>
+              </div>
 
-          <p className="mt-10 text-center text-xs text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            <ShieldCheck className="inline h-4 w-4 text-primary mr-1 mb-0.5" />
-            These are placeholder badges. Once official certificates are received, the actual license numbers or scans will be displayed here.
-          </p>
+              {/* Certificate Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    title: 'FSSAI License',
+                    authority: 'Food Safety & Standards Authority of India',
+                    number: 'License No. — XXXXXXXXXXXX',
+                    icon: (
+                      <svg viewBox="0 0 60 60" className="w-10 h-10">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <path d="M30 10l20 8v16c0 15-9 26-20 33C10 60 10 49 10 34V18z" fill="none" stroke="#D4AF37" strokeWidth="2"/>
+                        <path d="M22 30c0-5 4-8 8-8s8 3 8 8-4 8-8 8" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+                        <line x1="30" y1="22" x2="30" y2="38" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'GST Registered',
+                    authority: 'Goods & Services Tax — Government of India',
+                    number: 'GSTIN — XXXXXXXXXXXXXXXXX',
+                    icon: (
+                      <svg viewBox="0 0 60 60" className="w-10 h-10">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <text x="30" y="38" fontFamily="serif" fontSize="22" fontWeight="700" fill="#D4AF37" textAnchor="middle">₹</text>
+                        <circle cx="30" cy="30" r="18" fill="none" stroke="#fff" strokeWidth="1" strokeDasharray="3 2"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'Trade License',
+                    authority: 'Municipal Corporation — Local Body Approval',
+                    number: 'License No. — XXXXXXXXXXXX',
+                    icon: (
+                      <svg viewBox="0 0 60 60" className="w-10 h-10">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <rect x="18" y="26" width="24" height="16" rx="1" fill="none" stroke="#fff" strokeWidth="2"/>
+                        <path d="M18 26l4-6h16l4 6" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinejoin="round"/>
+                        <line x1="30" y1="26" x2="30" y2="42" stroke="#D4AF37" strokeWidth="1.5"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'Health / Eating House License',
+                    authority: 'Issued by Local Police / Health Dept.',
+                    number: 'License No. — XXXXXXXXXXXX',
+                    icon: (
+                      <svg viewBox="0 0 60 60" className="w-10 h-10">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <path d="M30 16c-6-6-16-1-16 7 0 9 11 14 16 19 5-5 16-10 16-19 0-8-10-13-16-7z" fill="none" stroke="#fff" strokeWidth="2" strokeLinejoin="round"/>
+                        <path d="M30 16c-6-6-16-1-16 7 0 9 11 14 16 19 5-5 16-10 16-19 0-8-10-13-16-7z" fill="#D4AF37" fillOpacity="0.15"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'Fire Safety NOC',
+                    authority: 'Fire Department No-Objection Certificate',
+                    number: 'NOC No. — XXXXXXXXXXXX',
+                    icon: (
+                      <svg viewBox="0 0 60 60" className="w-10 h-10">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <path d="M30 14c4 5-3 7-1 13 1 3 4 4 6 3 2 6-3 12-9 12-7 0-11-5-10-11 1-7 6-7 4-13 3 1 4 0 4-4 2 2 4 0 6 0z" fill="none" stroke="#fff" strokeWidth="2" strokeLinejoin="round"/>
+                        <path d="M30 14c4 5-3 7-1 13 1 3 4 4 6 3 2 6-3 12-9 12-7 0-11-5-10-11 1-7 6-7 4-13 3 1 4 0 4-4 2 2 4 0 6 0z" fill="#D4AF37" fillOpacity="0.15"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: 'Shop & Establishment Act',
+                    authority: 'State Labour Department Registration',
+                    number: 'Reg. No. — XXXXXXXXXXXX',
+                    icon: (
+                      <svg viewBox="0 0 60 60" className="w-10 h-10">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <rect x="16" y="22" width="28" height="20" rx="1.5" fill="none" stroke="#fff" strokeWidth="2"/>
+                        <path d="M22 22v-4h16v4" fill="none" stroke="#D4AF37" strokeWidth="2"/>
+                        <line x1="16" y1="32" x2="44" y2="32" stroke="#D4AF37" strokeWidth="1.5"/>
+                        <line x1="22" y1="38" x2="38" y2="38" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                    ),
+                  },
+                ].map((cert, i) => (
+                  <motion.div
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    className="group relative bg-[#2a0a14] border border-[#D4AF37]/30 rounded-xl overflow-hidden hover:border-[#D4AF37]/70 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.12)]"
+                  >
+                    {/* Corner ribbon */}
+                    <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
+                      <div className="absolute top-3 right-[-18px] rotate-45 bg-[#D4AF37] text-[#2a0a14] text-[8px] font-bold uppercase tracking-wider w-16 text-center py-0.5">
+                        Verified
+                      </div>
+                    </div>
+
+                    {/* Top gold accent line */}
+                    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60" />
+
+                    <div className="p-6">
+                      {/* Icon + Title row */}
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="shrink-0 w-14 h-14 rounded-full border border-[#D4AF37]/40 bg-[#1a0f0f] flex items-center justify-center group-hover:border-[#D4AF37]/80 transition-colors">
+                          {cert.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-serif font-bold text-white text-base leading-snug mb-1">
+                            {cert.title}
+                          </h3>
+                          <p className="text-[#c8b9a8] text-[11px] leading-relaxed">{cert.authority}</p>
+                        </div>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="border-t border-[#D4AF37]/20 my-4" />
+
+                      {/* License number */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-[#D4AF37]/70 text-[10px] font-mono tracking-widest uppercase">
+                          {cert.number}
+                        </span>
+                        <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#D4AF37]">
+                          <ShieldCheck className="h-3 w-3" />
+                          Active
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Footer note */}
+              <p className="mt-10 text-center text-[11px] text-[#8a7060] leading-relaxed max-w-xl mx-auto">
+                License numbers shown above are placeholders. Official certificates are available for inspection at the restaurant premises upon request.
+              </p>
+            </div>
+
+            {/* Bottom decorative border */}
+            <div className="h-1 w-full bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]" />
+          </div>
         </div>
 
       </div>
