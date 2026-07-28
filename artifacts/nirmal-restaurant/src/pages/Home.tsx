@@ -161,9 +161,9 @@ export default function Home() {
       </section>
 
       {/* Banquet Hall Teaser */}
-      <section className="py-24 bg-muted/40">
-        <div className="container mx-auto px-4">
-          <div className="bg-white max-w-5xl mx-auto p-10 md:p-16 rounded-2xl shadow-xl border border-border">
+      <section className="bg-muted/40">
+        <div className="w-full">
+          <div className="bg-white w-full p-10 md:p-20 shadow-xl border-y border-border">
             <span className="flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-sm mb-4">
               <Music className="h-4 w-4" /> Celebrate With Us
             </span>
