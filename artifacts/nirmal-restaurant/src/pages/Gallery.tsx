@@ -15,6 +15,14 @@ import galleryNew2 from '@assets/generated_images/gallery-new-2.jpg';
 import galleryNew3 from '@assets/generated_images/gallery-new-3.jpg';
 import galleryNew4 from '@assets/generated_images/gallery-new-4.jpg';
 import galleryNew5 from '@assets/generated_images/gallery-new-5.jpg';
+import galleryB1 from '@assets/generated_images/gallery-b1.jpg';
+import galleryB2 from '@assets/generated_images/gallery-b2.jpg';
+import galleryB3 from '@assets/generated_images/gallery-b3.jpg';
+import galleryB4 from '@assets/generated_images/gallery-b4.jpg';
+import galleryB5 from '@assets/generated_images/gallery-b5.jpg';
+import galleryB6 from '@assets/generated_images/gallery-b6.jpg';
+import galleryB7 from '@assets/generated_images/gallery-b7.jpg';
+import galleryB8 from '@assets/generated_images/gallery-b8.jpg';
 
 // AI-generated food photos
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
@@ -41,6 +49,14 @@ const images: GalleryImage[] = [
   { id: '13', src: galleryNew3,          alt: 'Party Hall — Live Event Buffet',               category: 'Events' },
   { id: '14', src: galleryNew4,          alt: 'Nirmal Family Restaurant — Welcome Gate',      category: 'Restaurant' },
   { id: '15', src: galleryNew5,          alt: 'Interior Wall Art & Floral Decor',             category: 'Restaurant' },
+  { id: '16', src: galleryB1,            alt: 'Restaurant Dining Hall — Live Event',          category: 'Events' },
+  { id: '17', src: galleryB2,            alt: 'Banquet Hall — Corporate Gathering',            category: 'Events' },
+  { id: '18', src: galleryB3,            alt: 'Nirmal Building — Night View',                  category: 'Restaurant' },
+  { id: '19', src: galleryB4,            alt: 'Nirmal Family Restaurant — Signage Art',        category: 'Restaurant' },
+  { id: '20', src: galleryB5,            alt: 'Dining Area — Interior Seating',                category: 'Restaurant' },
+  { id: '21', src: galleryB6,            alt: 'Nirmal Restaurant — Interior View',             category: 'Restaurant' },
+  { id: '22', src: galleryB7,            alt: 'Party Hall — Decorated Setup',                  category: 'Events' },
+  { id: '23', src: galleryB8,            alt: 'Nirmal Restaurant — Ambience',                  category: 'Restaurant' },
   { id: '7',  src: dishBiryani,          alt: 'Hyderabadi Dum Biryani',                      category: 'Food' },
   { id: '8',  src: dishButterChicken,    alt: 'Murgh Makhani',                               category: 'Food' },
   { id: '9',  src: dishPaneerTikka,      alt: 'Sizzling Paneer Tikka',                       category: 'Food' },
