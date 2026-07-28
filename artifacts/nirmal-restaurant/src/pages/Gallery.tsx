@@ -10,6 +10,11 @@ import galleryEntrance from '@assets/generated_images/gallery-entrance.jpg';
 import galleryDecor from '@assets/generated_images/gallery-decor.jpg';
 import galleryHallEmpty from '@assets/generated_images/gallery-hall-empty.jpg';
 import galleryExtra from '@assets/generated_images/gallery-extra.jpg';
+import galleryNew1 from '@assets/generated_images/gallery-new-1.jpg';
+import galleryNew2 from '@assets/generated_images/gallery-new-2.jpg';
+import galleryNew3 from '@assets/generated_images/gallery-new-3.jpg';
+import galleryNew4 from '@assets/generated_images/gallery-new-4.jpg';
+import galleryNew5 from '@assets/generated_images/gallery-new-5.jpg';
 
 // AI-generated food photos
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
@@ -31,6 +36,11 @@ const images: GalleryImage[] = [
   { id: '4',  src: galleryHallEvent,     alt: 'Grand Buffet Setup — Party Hall',             category: 'Events' },
   { id: '5',  src: galleryDecor,         alt: 'Beautiful Wall Decor & Floral Arrangement',   category: 'Restaurant' },
   { id: '6',  src: galleryExtra,         alt: 'Nirmal Restaurant',                           category: 'Restaurant' },
+  { id: '11', src: galleryNew1,          alt: 'Nirmal Restaurant — Front View',               category: 'Restaurant' },
+  { id: '12', src: galleryNew2,          alt: 'Nirmal Restaurant — Evening Exterior',         category: 'Restaurant' },
+  { id: '13', src: galleryNew3,          alt: 'Party Hall — Live Event Buffet',               category: 'Events' },
+  { id: '14', src: galleryNew4,          alt: 'Nirmal Family Restaurant — Welcome Gate',      category: 'Restaurant' },
+  { id: '15', src: galleryNew5,          alt: 'Interior Wall Art & Floral Decor',             category: 'Restaurant' },
   { id: '7',  src: dishBiryani,          alt: 'Hyderabadi Dum Biryani',                      category: 'Food' },
   { id: '8',  src: dishButterChicken,    alt: 'Murgh Makhani',                               category: 'Food' },
   { id: '9',  src: dishPaneerTikka,      alt: 'Sizzling Paneer Tikka',                       category: 'Food' },
