@@ -29,7 +29,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
@@ -38,28 +37,31 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
           isScrolled
-            ? 'bg-background/95 backdrop-blur-md shadow-sm border-border py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-background/98 backdrop-blur-md shadow-md border-border py-2'
+            : 'bg-background/95 backdrop-blur-sm shadow-sm border-border py-3'
         )}
       >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="font-serif text-2xl md:text-3xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
+        <div className="w-full px-4 md:px-6 flex items-center gap-6">
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0 group">
+            <span className="font-serif text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
               Nirmal
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Nav — all items left-aligned after logo */}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 className={cn(
-                  'text-sm font-medium uppercase tracking-wider transition-colors hover:text-secondary',
-                  location === link.path ? 'text-secondary font-bold' : 'text-foreground'
+                  'px-3 py-1.5 text-xs lg:text-sm font-medium uppercase tracking-wide rounded transition-colors whitespace-nowrap',
+                  location === link.path
+                    ? 'text-secondary font-bold bg-secondary/10'
+                    : 'text-foreground hover:text-secondary hover:bg-secondary/5'
                 )}
               >
                 {link.label}
@@ -67,7 +69,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => setBookingOpen(true)}
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wider text-sm cursor-pointer"
+              className="ml-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wide text-xs lg:text-sm cursor-pointer whitespace-nowrap"
             >
               Book Table
             </button>
@@ -75,7 +77,7 @@ export default function Navbar() {
 
           {/* Mobile Nav Toggle */}
           <button
-            className="md:hidden text-foreground p-2"
+            className="md:hidden ml-auto text-foreground p-2"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
