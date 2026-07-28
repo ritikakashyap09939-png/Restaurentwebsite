@@ -4,11 +4,12 @@ import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 // Real restaurant photos
-const exterior = '/images/exterior.jpg';
-const hallBuffet = '/images/hall-buffet.jpg';
-const wedding = '/images/wedding.jpg';
-const hallDining = '/images/hall-dining.jpg';
-const hallDining2 = '/images/hall-dining2.jpg';
+import galleryExteriorNight from '@assets/generated_images/gallery-exterior-night.jpg';
+import galleryHallEvent from '@assets/generated_images/gallery-hall-event.jpg';
+import galleryEntrance from '@assets/generated_images/gallery-entrance.jpg';
+import galleryDecor from '@assets/generated_images/gallery-decor.jpg';
+import galleryHallEmpty from '@assets/generated_images/gallery-hall-empty.jpg';
+import galleryExtra from '@assets/generated_images/gallery-extra.jpg';
 
 // AI-generated food photos
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
@@ -24,15 +25,16 @@ type GalleryImage = {
 };
 
 const images: GalleryImage[] = [
-  { id: '1', src: exterior,      alt: 'Nirmal Restaurant — Main Entrance',        category: 'Restaurant' },
-  { id: '2', src: hallDining,    alt: 'Elegant Dining Hall Interior',              category: 'Restaurant' },
-  { id: '3', src: hallDining2,   alt: 'Party Hall — Evening Ambience',             category: 'Restaurant' },
-  { id: '4', src: hallBuffet,    alt: 'Grand Buffet Setup — Party Hall',           category: 'Events' },
-  { id: '5', src: wedding,       alt: 'Wedding Ceremony at Nirmal Party Hall',     category: 'Events' },
-  { id: '6', src: dishBiryani,   alt: 'Hyderabadi Dum Biryani',                   category: 'Food' },
-  { id: '7', src: dishButterChicken, alt: 'Murgh Makhani',                        category: 'Food' },
-  { id: '8', src: dishPaneerTikka,   alt: 'Sizzling Paneer Tikka',               category: 'Food' },
-  { id: '9', src: dishDalMakhani,    alt: 'Rich Dal Makhani',                     category: 'Food' },
+  { id: '1',  src: galleryExteriorNight, alt: 'Nirmal Restaurant — Building Exterior',      category: 'Restaurant' },
+  { id: '2',  src: galleryEntrance,      alt: 'Nirmal Family Restaurant — Welcome Entrance', category: 'Restaurant' },
+  { id: '3',  src: galleryHallEmpty,     alt: 'Party Hall — Spacious Interior',              category: 'Restaurant' },
+  { id: '4',  src: galleryHallEvent,     alt: 'Grand Buffet Setup — Party Hall',             category: 'Events' },
+  { id: '5',  src: galleryDecor,         alt: 'Beautiful Wall Decor & Floral Arrangement',   category: 'Restaurant' },
+  { id: '6',  src: galleryExtra,         alt: 'Nirmal Restaurant',                           category: 'Restaurant' },
+  { id: '7',  src: dishBiryani,          alt: 'Hyderabadi Dum Biryani',                      category: 'Food' },
+  { id: '8',  src: dishButterChicken,    alt: 'Murgh Makhani',                               category: 'Food' },
+  { id: '9',  src: dishPaneerTikka,      alt: 'Sizzling Paneer Tikka',                       category: 'Food' },
+  { id: '10', src: dishDalMakhani,       alt: 'Rich Dal Makhani',                            category: 'Food' },
 ];
 
 const categories = ['All', 'Restaurant', 'Events', 'Food'];
