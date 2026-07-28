@@ -161,22 +161,19 @@ export default function Home() {
       </section>
 
       {/* Banquet Hall Teaser */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary z-0" />
-        <div className="absolute inset-0 opacity-30 z-0 bg-cover bg-center" style={{ backgroundImage: `url(${weddingPhoto})` }} />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-white/95 backdrop-blur-sm max-w-2xl p-8 md:p-12 rounded-lg shadow-2xl">
+      <section className="py-24 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <div className="bg-white max-w-5xl mx-auto p-10 md:p-16 rounded-2xl shadow-xl border border-border">
             <span className="flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-sm mb-4">
               <Music className="h-4 w-4" /> Celebrate With Us
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Nirmal Party Hall</h2>
-            <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6">Nirmal Party Hall</h2>
+            <p className="text-xl text-foreground/80 mb-10 leading-relaxed max-w-3xl">
               Make your special moments unforgettable. From grand weddings to intimate birthday parties, our elegant banquet hall accommodates up to 500 guests with premium catering, decoration, and impeccable service.
             </p>
             <Link 
               href="/banquet" 
-              className="inline-flex bg-primary text-white px-6 py-3 rounded-sm font-medium hover:bg-primary/90 transition-colors uppercase tracking-wider text-sm"
+              className="inline-flex bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-colors uppercase tracking-wider text-sm"
             >
               View Hall Details
             </Link>
