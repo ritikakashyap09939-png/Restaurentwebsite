@@ -42,7 +42,6 @@ const images: GalleryImage[] = [
   { id: '3',  src: galleryHallEmpty,     alt: 'Party Hall — Spacious Interior',              category: 'Restaurant' },
   { id: '4',  src: galleryHallEvent,     alt: 'Grand Buffet Setup — Party Hall',             category: 'Events' },
   { id: '5',  src: galleryDecor,         alt: 'Beautiful Wall Decor & Floral Arrangement',   category: 'Restaurant' },
-  { id: '6',  src: galleryExtra,         alt: 'Nirmal Restaurant',                           category: 'Restaurant' },
   { id: '13', src: galleryNew3,          alt: 'Party Hall — Live Event Buffet',               category: 'Events' },
   { id: '14', src: galleryNew4,          alt: 'Nirmal Family Restaurant — Welcome Gate',      category: 'Restaurant' },
   { id: '15', src: galleryNew5,          alt: 'Interior Wall Art & Floral Decor',             category: 'Restaurant' },
