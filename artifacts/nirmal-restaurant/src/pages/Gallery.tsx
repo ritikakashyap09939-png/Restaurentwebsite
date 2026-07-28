@@ -38,14 +38,11 @@ type GalleryImage = {
 };
 
 const images: GalleryImage[] = [
-  { id: '1',  src: galleryExteriorNight, alt: 'Nirmal Restaurant — Building Exterior',      category: 'Restaurant' },
   { id: '2',  src: galleryEntrance,      alt: 'Nirmal Family Restaurant — Welcome Entrance', category: 'Restaurant' },
   { id: '3',  src: galleryHallEmpty,     alt: 'Party Hall — Spacious Interior',              category: 'Restaurant' },
   { id: '4',  src: galleryHallEvent,     alt: 'Grand Buffet Setup — Party Hall',             category: 'Events' },
   { id: '5',  src: galleryDecor,         alt: 'Beautiful Wall Decor & Floral Arrangement',   category: 'Restaurant' },
   { id: '6',  src: galleryExtra,         alt: 'Nirmal Restaurant',                           category: 'Restaurant' },
-  { id: '11', src: galleryNew1,          alt: 'Nirmal Restaurant — Front View',               category: 'Restaurant' },
-  { id: '12', src: galleryNew2,          alt: 'Nirmal Restaurant — Evening Exterior',         category: 'Restaurant' },
   { id: '13', src: galleryNew3,          alt: 'Party Hall — Live Event Buffet',               category: 'Events' },
   { id: '14', src: galleryNew4,          alt: 'Nirmal Family Restaurant — Welcome Gate',      category: 'Restaurant' },
   { id: '15', src: galleryNew5,          alt: 'Interior Wall Art & Floral Decor',             category: 'Restaurant' },
