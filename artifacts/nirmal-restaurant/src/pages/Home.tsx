@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowRight, Star, Utensils, Users, Music } from 'lucide-react';
-const heroBg = '/images/exterior.jpg';
+import heroBg from '@assets/generated_images/restaurant-exterior.jpg';
 const banquetWedding = '/images/hall-buffet.jpg';
 const weddingPhoto = '/images/wedding.jpg';
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
@@ -25,47 +25,56 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        <div 
+      <section className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+        <div
           className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url(${heroBg})`,
-            backgroundPosition: 'center',
-          }}
+          style={{ backgroundImage: `url(${heroBg})` }}
         >
-          <div className="absolute inset-0 bg-black/60 z-10" />
+          <div className="absolute inset-0 bg-black/50 z-10" />
         </div>
-        
-        <div className="container relative z-20 mx-auto px-4 text-center mt-20">
+
+        <div className="container relative z-20 mx-auto px-8 md:px-16 mt-16">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-2xl text-left"
           >
-            <span className="text-secondary font-medium tracking-[0.3em] uppercase text-sm md:text-base block mb-4">
+            <motion.span
+              variants={fadeInUp}
+              className="text-secondary font-medium tracking-[0.3em] uppercase text-sm md:text-base block mb-4"
+            >
               Tradition in Every Bite
-            </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white font-bold mb-6 leading-tight drop-shadow-lg">
+            </motion.span>
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-bold mb-6 leading-tight drop-shadow-lg"
+            >
               Nirmal Family Restaurant and Party Hall
-            </h1>
-            <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 font-light drop-shadow">
+            </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 mb-10 font-light drop-shadow"
+            >
               A heritage of authentic Indian flavors, serving families with love, warmth, and spices passed down through generations.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                href="/contact" 
-                className="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/20 text-lg min-w-[200px]"
+            </motion.p>
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
+              <Link
+                href="/contact"
+                className="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-all shadow-lg text-lg min-w-[200px] text-center"
               >
                 Reserve a Table
               </Link>
-              <Link 
-                href="/menu" 
-                className="bg-transparent border border-white text-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-black transition-all text-lg min-w-[200px]"
+              <Link
+                href="/menu"
+                className="bg-transparent border border-white text-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-black transition-all text-lg min-w-[200px] text-center"
               >
                 View Menu
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
