@@ -1,6 +1,7 @@
 kind = "web"
 previewPath = "/"
 title = "Nirmal Family Restaurant and Party Hall"
+description = "A professional multi-page restaurant and banquet hall website for Nirmal Family Restaurant and Party Hall, featuring home, about, menu with veg/non-veg filters, party hall booking, gallery, testimonials, and contact pages."
 version = "1.0.0"
 id = "artifacts/nirmal-restaurant"
 router = "path"
