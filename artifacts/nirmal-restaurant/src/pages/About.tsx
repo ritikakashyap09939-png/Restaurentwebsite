@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Leaf, ShieldCheck } from 'lucide-react';
-import teamPhoto from '@assets/generated_images/restaurant-exterior.jpg';
+import teamPhoto from '@assets/generated_images/team-photo.jpg';
 
 export default function About() {
   return (
