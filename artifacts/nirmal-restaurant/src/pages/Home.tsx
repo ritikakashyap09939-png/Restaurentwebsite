@@ -128,15 +128,23 @@ export default function Home() {
       {/* Featured Dishes */}
       <section className="py-20 bg-[#fdfaf5] border-y border-border">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-2xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+            className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
+          >
+            <motion.div variants={fadeInUp} className="max-w-2xl">
               <span className="text-secondary font-bold uppercase tracking-wider text-sm mb-2 block">Our Signatures</span>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary">Flavors to Remember</h2>
-            </div>
-            <Link href="/menu" className="group flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors">
-              Explore Full Menu <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <Link href="/menu" className="group flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors">
+                Explore Full Menu <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -172,40 +180,58 @@ export default function Home() {
       {/* Banquet Hall Teaser */}
       <section className="bg-muted/40">
         <div className="w-full">
-          <div className="bg-white w-full p-10 md:p-20 shadow-xl border-y border-border">
-            <span className="flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-sm mb-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+            className="bg-white w-full p-10 md:p-20 shadow-xl border-y border-border"
+          >
+            <motion.span variants={fadeInUp} className="flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-sm mb-4">
               <Music className="h-4 w-4" /> Celebrate With Us
-            </span>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6">Nirmal Party Hall</h2>
-            <p className="text-xl text-foreground/80 mb-10 leading-relaxed max-w-3xl">
+            </motion.span>
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6">
+              Nirmal Party Hall
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-foreground/80 mb-10 leading-relaxed max-w-3xl">
               Make your special moments unforgettable. From grand weddings to intimate birthday parties, our elegant banquet hall accommodates up to 500 guests with premium catering, decoration, and impeccable service.
-            </p>
-            <Link 
-              href="/banquet" 
-              className="inline-flex bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-colors uppercase tracking-wider text-sm"
-            >
-              View Hall Details
-            </Link>
-          </div>
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <Link
+                href="/banquet"
+                className="inline-flex bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-colors uppercase tracking-wider text-sm"
+              >
+                View Hall Details
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-secondary text-[#1a0f0f] text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Ready for a memorable meal?</h2>
-          <p className="text-lg mb-8 max-w-xl mx-auto opacity-90">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={staggerContainer}
+          className="container mx-auto px-4"
+        >
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif font-bold mb-4">
+            Ready for a memorable meal?
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-lg mb-8 max-w-xl mx-auto opacity-90">
             Join us at Nirmal for lunch or dinner. Walk-ins are welcome, but reservations are recommended for weekends.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          </motion.p>
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/contact" className="bg-[#1a0f0f] text-secondary px-8 py-4 rounded-sm font-bold hover:bg-[#2c1f1f] transition-colors uppercase tracking-wider">
               Book A Table
             </Link>
             <a href="tel:+919876543210" className="flex items-center gap-2 font-bold text-lg hover:underline underline-offset-4">
               Or call +91 98765 43210
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );
