@@ -72,6 +72,30 @@ const IMG = {
   coldCoffee:     'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=480&h=320&fit=crop&auto=format',
   aamPanna:       'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=480&h=320&fit=crop&auto=format',
   jalJeera:       'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=480&h=320&fit=crop&auto=format',
+  // Sweets
+  rasgulle:       'https://images.unsplash.com/photo-1632149877166-f75d49000351?w=480&h=320&fit=crop&auto=format',
+  barfi:          'https://images.unsplash.com/photo-1571197119738-37e8d8cc4680?w=480&h=320&fit=crop&auto=format',
+  kajuKatli:      'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=480&h=320&fit=crop&auto=format',
+  jalebi:         'https://images.unsplash.com/photo-1601050690117-a62d48f4ac50?w=480&h=320&fit=crop&auto=format',
+  ladoo:          'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=480&h=320&fit=crop&auto=format',
+  kulfi:          'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=480&h=320&fit=crop&auto=format',
+  iceCreamScoop:  'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=480&h=320&fit=crop&auto=format',
+  chocoIceCream:  'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=480&h=320&fit=crop&auto=format',
+  mangoIceCream:  'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=480&h=320&fit=crop&auto=format',
+  halwaPoori:     'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=480&h=320&fit=crop&auto=format',
+  // Fast Food
+  vegPizza:       'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=480&h=320&fit=crop&auto=format',
+  paneerPizza:    'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=480&h=320&fit=crop&auto=format',
+  chickenPizza:   'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=480&h=320&fit=crop&auto=format',
+  vegBurger:      'https://images.unsplash.com/photo-1550547660-d9450f859349?w=480&h=320&fit=crop&auto=format',
+  chickenBurger:  'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=480&h=320&fit=crop&auto=format',
+  vegSandwich:    'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=480&h=320&fit=crop&auto=format',
+  clubSandwich:   'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=480&h=320&fit=crop&auto=format',
+  frenchFries:    'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=480&h=320&fit=crop&auto=format',
+  vegWrap:        'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=480&h=320&fit=crop&auto=format',
+  chickenWrap:    'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=480&h=320&fit=crop&auto=format',
+  hotdog:         'https://images.unsplash.com/photo-1612392166886-ee8475b03af2?w=480&h=320&fit=crop&auto=format',
+  nachos:         'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=480&h=320&fit=crop&auto=format',
 };
 
 const menuData: MenuItem[] = [
@@ -144,9 +168,44 @@ const menuData: MenuItem[] = [
   { id:'bev6', name:'Cold Coffee',          desc:'Rich blended cold coffee with vanilla ice cream',                 price:120, type:'veg',     category:'Beverages',      img:IMG.coldCoffee },
   { id:'bev7', name:'Aam Panna',            desc:'Raw mango cooler with cumin, black salt and mint',                price:80,  type:'veg',     category:'Beverages',      img:IMG.aamPanna },
   { id:'bev8', name:'Jal Jeera',            desc:'Tangy cumin-mint chilled drink — a perfect appetite starter',     price:70,  type:'veg',     category:'Beverages',      img:IMG.jalJeera },
+
+  // ── SWEETS ────────────────────────────────────────────────────────────────
+  { id:'sw1',  name:'Rasgulla (4 pcs)',      desc:'Spongy soft cottage cheese balls soaked in light sugar syrup',    price:80,  type:'veg',     category:'Sweets',         img:IMG.rasgulle,       tag:'Must Try' },
+  { id:'sw2',  name:'Kaju Katli (100g)',     desc:'Premium cashew fudge with silver vark — melts in the mouth',      price:180, type:'veg',     category:'Sweets',         img:IMG.kajuKatli,      tag:'Best Seller' },
+  { id:'sw3',  name:'Milk Barfi (4 pcs)',    desc:'Rich khoya barfi with cardamom and pistachio garnish',            price:120, type:'veg',     category:'Sweets',         img:IMG.barfi },
+  { id:'sw4',  name:'Jalebi (200g)',         desc:'Crispy spiral fried dough soaked in warm saffron sugar syrup',    price:90,  type:'veg',     category:'Sweets',         img:IMG.jalebi,         tag:'Best Seller' },
+  { id:'sw5',  name:'Motichoor Ladoo (2 pcs)',desc:'Fine gram flour pearl ladoos with saffron and cardamom',        price:70,  type:'veg',     category:'Sweets',         img:IMG.ladoo },
+  { id:'sw6',  name:'Besan Ladoo (2 pcs)',   desc:'Roasted gram flour ladoos made in pure desi ghee',                price:60,  type:'veg',     category:'Sweets',         img:IMG.ladoo },
+  { id:'sw7',  name:'Kesar Pista Kulfi',     desc:'Traditional saffron pistachio frozen dessert on stick',           price:80,  type:'veg',     category:'Sweets',         img:IMG.kulfi,          tag:'Must Try' },
+  { id:'sw8',  name:'Vanilla Ice Cream',     desc:'2 scoops of creamy vanilla ice cream with wafer',                price:80,  type:'veg',     category:'Sweets',         img:IMG.iceCreamScoop },
+  { id:'sw9',  name:'Chocolate Ice Cream',   desc:'2 scoops of rich dark chocolate ice cream with chocolate sauce', price:90,  type:'veg',     category:'Sweets',         img:IMG.chocoIceCream },
+  { id:'sw10', name:'Mango Ice Cream',       desc:'Fresh Alphonso mango flavoured ice cream — seasonal favourite',   price:90,  type:'veg',     category:'Sweets',         img:IMG.mangoIceCream },
+  { id:'sw11', name:'Strawberry Ice Cream',  desc:'2 scoops of strawberry ice cream with fresh fruit topping',      price:90,  type:'veg',     category:'Sweets',         img:IMG.iceCreamScoop },
+  { id:'sw12', name:'Gulab Jamun (2 pcs)',   desc:'Deep-fried milk dumplings in rose-cardamom sugar syrup',         price:70,  type:'veg',     category:'Sweets',         img:IMG.gulabJamun },
+  { id:'sw13', name:'Rasmalai (2 pcs)',      desc:'Chilled cottage cheese rounds in saffron-flavored thickened milk',price:110, type:'veg',     category:'Sweets',         img:IMG.rasmalai },
+  { id:'sw14', name:'Gajar Ka Halwa',        desc:'Classic grated carrot pudding cooked in milk, sugar and ghee',   price:120, type:'veg',     category:'Sweets',         img:IMG.gajarHalwa },
+  { id:'sw15', name:'Sooji Halwa + Puri',    desc:'Semolina pudding served with 2 hot puris — comfort combo',        price:100, type:'veg',     category:'Sweets',         img:IMG.halwaPoori },
+
+  // ── FAST FOOD ─────────────────────────────────────────────────────────────
+  { id:'ff1',  name:'Margherita Pizza',      desc:'Classic tomato sauce, mozzarella and fresh basil on thin crust',  price:220, type:'veg',     category:'Fast Food',      img:IMG.vegPizza,       tag:'Best Seller' },
+  { id:'ff2',  name:'Paneer Tikka Pizza',    desc:'Spiced paneer chunks, capsicum and onion on cheesy base',          price:280, type:'veg',     category:'Fast Food',      img:IMG.paneerPizza,    tag:'Chef\'s Special' },
+  { id:'ff3',  name:'Veggie Delight Pizza',  desc:'Loaded with fresh mushrooms, olives, peppers and corn',           price:260, type:'veg',     category:'Fast Food',      img:IMG.vegPizza },
+  { id:'ff4',  name:'Chicken BBQ Pizza',     desc:'Smoky BBQ chicken, red onion and jalapeños on crispy crust',      price:350, type:'non-veg', category:'Fast Food',      img:IMG.chickenPizza,   tag:'Best Seller' },
+  { id:'ff5',  name:'Chicken Tikka Pizza',   desc:'Tandoori chicken tikka with green chutney base and cheese',       price:370, type:'non-veg', category:'Fast Food',      img:IMG.chickenPizza },
+  { id:'ff6',  name:'Veg Burger',            desc:'Crispy aloo-corn patty, lettuce, tomato and special sauce',       price:150, type:'veg',     category:'Fast Food',      img:IMG.vegBurger },
+  { id:'ff7',  name:'Paneer Burger',         desc:'Grilled paneer patty with mint chutney, onions and coleslaw',     price:180, type:'veg',     category:'Fast Food',      img:IMG.vegBurger,      tag:'Must Try' },
+  { id:'ff8',  name:'Chicken Burger',        desc:'Crispy fried chicken fillet with cheese and chipotle mayo',       price:220, type:'non-veg', category:'Fast Food',      img:IMG.chickenBurger,  tag:'Best Seller' },
+  { id:'ff9',  name:'Veg Club Sandwich',     desc:'Triple-decker with cucumber, cheese, tomato and mustard',         price:160, type:'veg',     category:'Fast Food',      img:IMG.vegSandwich },
+  { id:'ff10', name:'Chicken Club Sandwich', desc:'Grilled chicken, bacon, egg, lettuce in a toasted triple-decker', price:220, type:'non-veg', category:'Fast Food',      img:IMG.clubSandwich },
+  { id:'ff11', name:'Grilled Veg Sandwich',  desc:'Paneer, veggies and cheese grilled in herbed butter bread',       price:140, type:'veg',     category:'Fast Food',      img:IMG.vegSandwich },
+  { id:'ff12', name:'French Fries (Lg)',     desc:'Golden crispy fries with house seasoning and dipping sauce',      price:120, type:'veg',     category:'Fast Food',      img:IMG.frenchFries,    tag:'Must Try' },
+  { id:'ff13', name:'Peri Peri Fries',       desc:'Crispy fries tossed in fiery peri-peri spice mix',               price:140, type:'veg',     category:'Fast Food',      img:IMG.frenchFries },
+  { id:'ff14', name:'Veg Wrap',              desc:'Grilled paneer and veggies wrapped in a soft flavored tortilla',  price:170, type:'veg',     category:'Fast Food',      img:IMG.vegWrap },
+  { id:'ff15', name:'Chicken Wrap',          desc:'Shredded chicken tikka, lettuce and sriracha in a whole-wheat wrap',price:210,type:'non-veg', category:'Fast Food',     img:IMG.chickenWrap },
+  { id:'ff16', name:'Nachos with Dips',      desc:'Crunchy tortilla chips with salsa, guacamole and cheese dip',    price:180, type:'veg',     category:'Fast Food',      img:IMG.nachos },
 ];
 
-const categories = ['Starters', 'Main Veg', 'Main Non-Veg', 'Breads', 'Rice/Biryani', 'Desserts', 'Beverages'];
+const categories = ['Starters', 'Main Veg', 'Main Non-Veg', 'Breads', 'Rice/Biryani', 'Desserts', 'Sweets', 'Fast Food', 'Beverages'];
 const filters = ['All', 'Veg', 'Non-Veg'];
 
 const tagColors: Record<string, string> = {
@@ -188,7 +247,7 @@ export default function Menu() {
           />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Prepared fresh daily using authentic recipes and premium ingredients. <br className="hidden md:block" />
-            <span className="font-medium text-primary">54 dishes</span> across 7 categories.
+            <span className="font-medium text-primary">{menuData.length} dishes</span> across {categories.length} categories.
           </p>
         </motion.div>
 
