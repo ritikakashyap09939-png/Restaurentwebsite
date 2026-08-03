@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Leaf, ShieldCheck } from 'lucide-react';
-import teamPhoto from '@assets/generated_images/team-photo.jpg';
 
 export default function About() {
   return (
@@ -81,8 +80,8 @@ export default function About() {
             <div className="relative">
               <div className="absolute inset-0 bg-primary rounded-lg transform translate-x-4 translate-y-4 -z-10" />
               <img 
-                src={teamPhoto} 
-                alt="Nirmal Restaurant Family Team" 
+                src="/images/restaurant-front.jpeg" 
+                alt="Nirmal Family Restaurant and Party Hall" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
             </div>
