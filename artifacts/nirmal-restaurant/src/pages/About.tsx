@@ -254,48 +254,63 @@ export default function About() {
                 ].map((cert, i) => (
                   <motion.div
                     key={cert.title}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className="group relative bg-[#2a0a14] border border-[#D4AF37]/30 rounded-xl overflow-hidden hover:border-[#D4AF37]/70 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.12)]"
+                    transition={{ delay: i * 0.1, duration: 0.5, type: 'spring', stiffness: 100 }}
+                    whileHover={{ y: -6, boxShadow: '0 16px 40px rgba(212,175,55,0.25)' }}
+                    className="group relative bg-white border border-[#D4AF37]/40 rounded-xl overflow-hidden transition-shadow duration-300"
                   >
                     {/* Corner ribbon */}
                     <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                      <div className="absolute top-3 right-[-18px] rotate-45 bg-[#D4AF37] text-[#2a0a14] text-[8px] font-bold uppercase tracking-wider w-16 text-center py-0.5">
+                      <div className="absolute top-3 right-[-18px] rotate-45 bg-[#D4AF37] text-white text-[8px] font-bold uppercase tracking-wider w-16 text-center py-0.5">
                         Verified
                       </div>
                     </div>
 
                     {/* Top gold accent line */}
-                    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60" />
+                    <motion.div
+                      className="h-[3px] w-full bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 + 0.3, duration: 0.6 }}
+                    />
 
                     <div className="p-6">
                       {/* Icon + Title row */}
                       <div className="flex items-start gap-4 mb-4">
-                        <div className="shrink-0 w-14 h-14 rounded-full border border-[#D4AF37]/40 bg-[#1a0f0f] flex items-center justify-center group-hover:border-[#D4AF37]/80 transition-colors">
+                        <motion.div
+                          className="shrink-0 w-14 h-14 rounded-full border border-[#D4AF37]/50 bg-[#fdf8ee] flex items-center justify-center group-hover:border-[#D4AF37] transition-colors"
+                          whileHover={{ rotate: [0, -8, 8, 0], scale: 1.1 }}
+                          transition={{ duration: 0.4 }}
+                        >
                           {cert.icon}
-                        </div>
+                        </motion.div>
                         <div>
-                          <h3 className="font-serif font-bold text-white text-base leading-snug mb-1">
+                          <h3 className="font-serif font-bold text-[#3a0f1e] text-base leading-snug mb-1">
                             {cert.title}
                           </h3>
-                          <p className="text-[#c8b9a8] text-[11px] leading-relaxed">{cert.authority}</p>
+                          <p className="text-gray-500 text-[11px] leading-relaxed">{cert.authority}</p>
                         </div>
                       </div>
 
                       {/* Divider */}
-                      <div className="border-t border-[#D4AF37]/20 my-4" />
+                      <div className="border-t border-[#D4AF37]/30 my-4" />
 
                       {/* License number */}
                       <div className="flex items-center justify-between">
-                        <span className="text-[#D4AF37]/70 text-[10px] font-mono tracking-widest uppercase">
+                        <span className="text-[#8B0000]/70 text-[10px] font-mono tracking-widest uppercase">
                           {cert.number}
                         </span>
-                        <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#D4AF37]">
+                        <motion.span
+                          className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#D4AF37]"
+                          animate={{ opacity: [1, 0.5, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.3 }}
+                        >
                           <ShieldCheck className="h-3 w-3" />
                           Active
-                        </span>
+                        </motion.span>
                       </div>
                     </div>
                   </motion.div>
