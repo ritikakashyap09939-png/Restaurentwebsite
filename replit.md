@@ -1,42 +1,42 @@
 # Nirmal Family Restaurant and Party Hall
 
-A professional multi-page restaurant and banquet hall website built with React + Vite + Tailwind CSS.
-
-## Pages
-- **Home** — Hero, highlights, featured dishes, party hall preview, testimonials, CTA
-- **About Us** — Story, family values, team photos
-- **Menu** — Categorized dishes with Veg/Non-Veg filter tabs
-- **Party Hall / Banquet** — Hall details, event types, packages, enquiry form
-- **Gallery** — Photo grid with lightbox
-- **Testimonials** — Customer reviews with star ratings
-- **Contact** — Google Map, contact form, WhatsApp button
-
-## Tech Stack
-- React 19 + Vite 7
-- Tailwind CSS v4
-- Wouter (routing)
-- Framer Motion (animations)
-- Radix UI + shadcn/ui components
-- React Hook Form + Zod (forms)
-
-## How to Run
-The app runs via the **"Start application"** workflow.
-
-```
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/nirmal-restaurant run dev
-```
-
-App is served at port **5173**.
+A professional multi-page restaurant and banquet hall website built with React + Vite (frontend) and Express (backend API).
 
 ## Project Structure
-```
-artifacts/nirmal-restaurant/
-  src/
-    pages/       — Home, About, Menu, Banquet, Gallery, Testimonials, Contact
-    components/  — Navbar, Footer, BookingModal, UI components
-    hooks/       — Custom React hooks
-    lib/         — Utilities
-```
+
+This is a pnpm monorepo with two main artifacts:
+
+- `artifacts/nirmal-restaurant/` — React + Vite frontend (served at `/`)
+- `artifacts/api-server/` — Express API backend (served at `/api`)
+- `attached_assets/generated_images/` — Restaurant and dish photos used by the frontend
+
+## Running the App
+
+Both services start automatically via their managed workflows:
+
+- **Frontend**: `artifacts/nirmal-restaurant: web` — runs `pnpm --filter @workspace/nirmal-restaurant run dev` on port 5173
+- **API Server**: `artifacts/api-server: API Server` — runs `pnpm --filter @workspace/api-server run dev` on port 8080
+
+To install dependencies: `pnpm install` from the workspace root.
+
+## Pages
+
+- **Home** — hero, highlights, quick stats
+- **About Us** — restaurant story and values
+- **Menu** — dishes with veg/non-veg filter
+- **Banquet** — party hall booking information
+- **Gallery** — photo gallery
+- **Reviews** — customer testimonials
+- **Contact** — contact form and location info
+
+## Tech Stack
+
+- React 19 + Vite 7
+- Tailwind CSS v4
+- Express 5 (API)
+- TypeScript throughout
+- pnpm workspaces
 
 ## User Preferences
-- Language: Hindi/English mixed (Hinglish)
+
+_None recorded yet._
