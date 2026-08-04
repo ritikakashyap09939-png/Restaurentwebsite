@@ -8,7 +8,6 @@ import galleryEntrance     from '@assets/generated_images/gallery-entrance.jpg';
 import galleryDecor        from '@assets/generated_images/gallery-decor.jpg';
 import galleryHallEmpty    from '@assets/generated_images/gallery-hall-empty.jpg';
 import galleryExtra        from '@assets/generated_images/gallery-extra.jpg';
-import galleryNew1         from '@assets/generated_images/gallery-new-1.jpg';
 import galleryNew3         from '@assets/generated_images/gallery-new-3.jpg';
 import galleryNew4         from '@assets/generated_images/gallery-new-4.jpg';
 import galleryNew5         from '@assets/generated_images/gallery-new-5.jpg';
@@ -19,10 +18,6 @@ import galleryB5           from '@assets/generated_images/gallery-b5.jpg';
 import galleryB6           from '@assets/generated_images/gallery-b6.jpg';
 import galleryB7           from '@assets/generated_images/gallery-b7.jpg';
 import galleryB8           from '@assets/generated_images/gallery-b8.jpg';
-import dishBiryani         from '@assets/generated_images/dish-biryani.jpg';
-import dishButterChicken   from '@assets/generated_images/dish-butter-chicken.jpg';
-import dishPaneerTikka     from '@assets/generated_images/dish-paneer-tikka.jpg';
-import dishDalMakhani      from '@assets/generated_images/dish-dal-makhani.jpg';
 
 type GalleryImage = { id: string; src: string; alt: string; category: 'Food' | 'Restaurant' | 'Events' };
 
@@ -42,16 +37,10 @@ const images: GalleryImage[] = [
   { id:'21', src: galleryB6,          alt: 'Nirmal Restaurant — Interior View',            category:'Restaurant' },
   { id:'22', src: galleryB7,          alt: 'Party Hall — Decorated Setup',                 category:'Events'     },
   { id:'23', src: galleryB8,          alt: 'Nirmal Restaurant — Ambience',                 category:'Restaurant' },
-  { id:'6',  src: galleryNew1,        alt: 'Nirmal Party Hall — Grand Setup',              category:'Events'     },
-
   { id:'12', src: galleryExtra,       alt: 'Hall Extra Setup',                             category:'Events'     },
-  { id:'7',  src: dishBiryani,        alt: 'Hyderabadi Dum Biryani',                       category:'Food'       },
-  { id:'8',  src: dishButterChicken,  alt: 'Murgh Makhani',                                category:'Food'       },
-  { id:'9',  src: dishPaneerTikka,    alt: 'Sizzling Paneer Tikka',                        category:'Food'       },
-  { id:'10', src: dishDalMakhani,     alt: 'Rich Dal Makhani',                             category:'Food'       },
 ];
 
-const categories = ['All', 'Restaurant', 'Events', 'Food'];
+const categories = ['All', 'Restaurant', 'Events'];
 
 const categoryColors: Record<string, string> = {
   Restaurant: 'bg-blue-600',

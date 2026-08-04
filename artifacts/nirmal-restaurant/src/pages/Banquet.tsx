@@ -10,9 +10,9 @@ import {
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import banquetCorporate from '@assets/generated_images/banquet-corporate.jpg';
 import heroBg from '@assets/generated_images/hero-bg.jpg';
-import exteriorNight from '@assets/generated_images/gallery-exterior-night.jpg';
+import banquetHeroReal from '@assets/banquet-hall-real.jpg';
 
-const HERO_IMG = exteriorNight;
+const HERO_IMG = banquetHeroReal;
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
