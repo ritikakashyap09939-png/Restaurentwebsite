@@ -8,6 +8,9 @@ import hazelnutIceCream  from '@assets/menu-hazelnut-icecream.jpg';
 import chocolateIceCream from '@assets/menu-chocolate-icecream.jpg';
 import royalSundae       from '@assets/menu-royal-sundae.jpg';
 import halwaBarfi        from '@assets/menu-halwa-barfi.jpg';
+import peda              from '@assets/menu-peda.jpg';
+import rasmalai          from '@assets/menu-rasmalai.jpg';
+import fruitCustard      from '@assets/menu-fruit-custard.jpg';
 
 type MenuItem = {
   id: string;
@@ -71,6 +74,29 @@ const MENU_ITEMS: MenuItem[] = [
     price: 89,
     img: halwaBarfi,
     tag: '🌿 Desi Favourite',
+  },
+  {
+    id: 'peda',
+    name: 'Peda',
+    desc: 'Soft melt-in-mouth milk peda topped with silver varq and fragrant dried flowers.',
+    price: 79,
+    img: peda,
+    tag: '🌸 Festival Special',
+  },
+  {
+    id: 'rasmalai',
+    name: 'Rasmalai',
+    desc: 'Spongy chhena dumplings soaked in saffron-cardamom rabri, garnished with pistachios.',
+    price: 109,
+    img: rasmalai,
+    tag: '⭐ Must Try',
+  },
+  {
+    id: 'fruit-custard',
+    name: 'Fruit Custard',
+    desc: 'Creamy vanilla custard loaded with fresh seasonal fruits, grapes and pomegranate.',
+    price: 99,
+    img: fruitCustard,
   },
 ];
 
