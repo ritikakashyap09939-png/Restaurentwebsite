@@ -10,9 +10,9 @@ import {
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import banquetCorporate from '@assets/generated_images/banquet-corporate.jpg';
 import heroBg from '@assets/generated_images/hero-bg.jpg';
+import exteriorNight from '@assets/generated_images/gallery-exterior-night.jpg';
 
-// High-quality Unsplash banquet/wedding hall images
-const HERO_IMG = 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&h=900&fit=crop&auto=format&q=90';
+const HERO_IMG = exteriorNight;
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
