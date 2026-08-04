@@ -15,6 +15,7 @@ import mithaiPlatter     from '@assets/menu-mithai-platter.jpg';
 import gulabRasgullaMix  from '@assets/menu-gulab-rasgulla-mix.jpg';
 import rasgulla          from '@assets/menu-rasgulla.jpg';
 import kalakand          from '@assets/menu-kalakand.jpg';
+import gulabJamun        from '@assets/menu-gulab-jamun.jpg';
 
 type MenuItem = {
   id: string;
