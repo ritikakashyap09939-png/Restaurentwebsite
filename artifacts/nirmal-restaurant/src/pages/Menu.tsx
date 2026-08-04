@@ -11,6 +11,10 @@ import halwaBarfi        from '@assets/menu-halwa-barfi.jpg';
 import peda              from '@assets/menu-peda.jpg';
 import rasmalai          from '@assets/menu-rasmalai.jpg';
 import fruitCustard      from '@assets/menu-fruit-custard.jpg';
+import mithaiPlatter     from '@assets/menu-mithai-platter.jpg';
+import gulabRasgullaMix  from '@assets/menu-gulab-rasgulla-mix.jpg';
+import rasgulla          from '@assets/menu-rasgulla.jpg';
+import kalakand          from '@assets/menu-kalakand.jpg';
 
 type MenuItem = {
   id: string;
@@ -97,6 +101,37 @@ const MENU_ITEMS: MenuItem[] = [
     desc: 'Creamy vanilla custard loaded with fresh seasonal fruits, grapes and pomegranate.',
     price: 99,
     img: fruitCustard,
+  },
+  {
+    id: 'mithai-platter',
+    name: 'Mithai Platter',
+    desc: 'Festival assortment of gulab jamun, rasgulla, jalebi, peda, barfi & modak in one tray.',
+    price: 249,
+    img: mithaiPlatter,
+    tag: '🎉 Party Special',
+  },
+  {
+    id: 'gulab-rasgulla-mix',
+    name: 'Gulab Jamun & Rasgulla Mix',
+    desc: 'Golden gulab jamun, milky rasgulla and mango kalakand rolls — a sweet lover\'s delight.',
+    price: 139,
+    img: gulabRasgullaMix,
+    tag: '🍬 Popular Combo',
+  },
+  {
+    id: 'rasgulla',
+    name: 'Rasgulla',
+    desc: 'Light & spongy chhena balls soaked in light sugar syrup — soft, fresh, classic Bengali style.',
+    price: 89,
+    img: rasgulla,
+  },
+  {
+    id: 'kalakand',
+    name: 'Kalakand',
+    desc: 'Rich milk-cake rounds set with granulated paneer, topped with pistachios and almonds.',
+    price: 99,
+    img: kalakand,
+    tag: '🌿 Desi Favourite',
   },
 ];
 
