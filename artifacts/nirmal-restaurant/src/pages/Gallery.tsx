@@ -18,6 +18,10 @@ import galleryB5           from '@assets/generated_images/gallery-b5.jpg';
 import galleryB6           from '@assets/generated_images/gallery-b6.jpg';
 import galleryB7           from '@assets/generated_images/gallery-b7.jpg';
 import galleryB8           from '@assets/generated_images/gallery-b8.jpg';
+import uploadedDiningEvent from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_(3)_1786041215656.jpeg';
+import uploadedBanquetEvent from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_(2)_1786041220073.jpeg';
+import uploadedExterior from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_1786041228537.jpeg';
+import uploadedFront from '@assets/WhatsApp_Image_2026-08-05_at_10.06.16_PM_1786041231050.jpeg';
 
 type GalleryImage = { id: string; src: string; alt: string; category: 'Food' | 'Restaurant' | 'Events' };
 
@@ -38,6 +42,10 @@ const images: GalleryImage[] = [
   { id:'22', src: galleryB7,          alt: 'Party Hall — Decorated Setup',                 category:'Events'     },
   { id:'23', src: galleryB8,          alt: 'Nirmal Restaurant — Ambience',                 category:'Restaurant' },
   { id:'12', src: galleryExtra,       alt: 'Hall Extra Setup',                             category:'Events'     },
+  { id:'24', src: uploadedDiningEvent, alt: 'Elegant Dining Celebration — Banquet Hall',   category:'Events'     },
+  { id:'25', src: uploadedBanquetEvent, alt: 'Banquet Hall — Guest Dining Experience',     category:'Events'     },
+  { id:'26', src: uploadedExterior,   alt: 'Nirmal Family Restaurant — Evening Exterior',  category:'Restaurant' },
+  { id:'27', src: uploadedFront,      alt: 'Nirmal Family Restaurant & Party Hall — Front Entrance', category:'Restaurant' },
 ];
 
 const categories = ['All', 'Restaurant', 'Events'];
