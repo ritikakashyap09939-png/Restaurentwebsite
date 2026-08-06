@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
 import BookingModal from './BookingModal';
 
 const navLinks = [
@@ -18,7 +16,6 @@ const navLinks = [
 export default function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
 
   useEffect(() => {
@@ -28,10 +25,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location]);
 
   return (
     <>
@@ -43,22 +36,34 @@ export default function Navbar() {
             : 'bg-background/95 backdrop-blur-sm shadow-sm border-border py-3'
         )}
       >
-        <div className="w-full px-4 md:px-6 flex items-center justify-between gap-4">
+        <div className="w-full px-4 md:px-6 lg:flex lg:items-center lg:gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0 group">
-            <span className="font-serif text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
-              Nirmal
-            </span>
-          </Link>
+          <div className="flex items-center justify-between gap-4 lg:flex-1">
+            <Link href="/" className="flex items-center shrink-0 group">
+              <span className="font-serif text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
+                Nirmal
+              </span>
+            </Link>
 
-          {/* Desktop Nav — all items left-aligned after logo */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <button
+              onClick={() => setBookingOpen(true)}
+              className="bg-primary text-primary-foreground px-3 xl:px-4 py-1.5 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wide text-xs xl:text-sm cursor-pointer whitespace-nowrap"
+            >
+              Book Table
+            </button>
+          </div>
+
+          {/* Always-visible navigation: wraps into a second row on smaller screens */}
+          <nav
+            aria-label="Primary navigation"
+            className="mt-2 flex w-full flex-wrap items-center justify-center gap-1 border-t border-border pt-2 lg:mt-0 lg:w-auto lg:shrink-0 lg:border-t-0 lg:pt-0 lg:gap-2"
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 className={cn(
-                   'px-2 xl:px-3 py-1.5 text-xs xl:text-sm font-medium uppercase tracking-wide rounded transition-colors whitespace-nowrap',
+                  'px-2 py-1 text-[11px] sm:text-xs xl:px-3 xl:text-sm font-medium uppercase tracking-wide rounded transition-colors whitespace-nowrap',
                   location === link.path
                     ? 'text-secondary font-bold bg-secondary/10'
                     : 'text-foreground hover:text-secondary hover:bg-secondary/5'
@@ -67,73 +72,8 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <button
-              onClick={() => setBookingOpen(true)}
-               className="ml-1 bg-primary text-primary-foreground px-3 xl:px-4 py-1.5 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wide text-xs xl:text-sm cursor-pointer whitespace-nowrap"
-            >
-              Book Table
-            </button>
           </nav>
-
-          {/* Mobile Nav Toggle */}
-          <button
-            className="lg:hidden flex items-center gap-2 rounded-sm border border-border px-3 py-2 text-sm font-medium uppercase tracking-wide text-foreground hover:border-secondary hover:text-secondary transition-colors"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-expanded={mobileMenuOpen}
-            aria-label="Open menu"
-          >
-            <Menu className="h-6 w-6" />
-            <span>Menu</span>
-          </button>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-               className="fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden flex flex-col"
-            >
-              <div className="flex items-center justify-between p-4 border-b border-border">
-                <span className="font-serif text-2xl font-bold text-primary">
-                  Nirmal
-                </span>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-foreground"
-                  aria-label="Close menu"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-              <div className="flex flex-col p-6 gap-6">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    href={link.path}
-                    className={cn(
-                      'text-xl font-serif transition-colors',
-                      location === link.path ? 'text-secondary font-bold' : 'text-foreground'
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <div className="mt-8">
-                  <button
-                    onClick={() => { setMobileMenuOpen(false); setBookingOpen(true); }}
-                    className="block w-full text-center bg-primary text-primary-foreground px-6 py-3 rounded-sm font-medium hover:bg-primary/90 transition-colors text-lg cursor-pointer"
-                  >
-                    Reserve a Table
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
 
       <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
