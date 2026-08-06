@@ -43,7 +43,7 @@ export default function Navbar() {
             : 'bg-background/95 backdrop-blur-sm shadow-sm border-border py-3'
         )}
       >
-        <div className="w-full px-4 md:px-6 flex items-center gap-6">
+        <div className="w-full px-4 md:px-6 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group">
             <span className="font-serif text-2xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
@@ -52,13 +52,13 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav — all items left-aligned after logo */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 className={cn(
-                  'px-3 py-1.5 text-xs lg:text-sm font-medium uppercase tracking-wide rounded transition-colors whitespace-nowrap',
+                   'px-2 xl:px-3 py-1.5 text-xs xl:text-sm font-medium uppercase tracking-wide rounded transition-colors whitespace-nowrap',
                   location === link.path
                     ? 'text-secondary font-bold bg-secondary/10'
                     : 'text-foreground hover:text-secondary hover:bg-secondary/5'
@@ -69,7 +69,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => setBookingOpen(true)}
-              className="ml-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wide text-xs lg:text-sm cursor-pointer whitespace-nowrap"
+               className="ml-1 bg-primary text-primary-foreground px-3 xl:px-4 py-1.5 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wide text-xs xl:text-sm cursor-pointer whitespace-nowrap"
             >
               Book Table
             </button>
@@ -77,11 +77,13 @@ export default function Navbar() {
 
           {/* Mobile Nav Toggle */}
           <button
-            className="md:hidden ml-auto text-foreground p-2"
+            className="lg:hidden flex items-center gap-2 rounded-sm border border-border px-3 py-2 text-sm font-medium uppercase tracking-wide text-foreground hover:border-secondary hover:text-secondary transition-colors"
             onClick={() => setMobileMenuOpen(true)}
+            aria-expanded={mobileMenuOpen}
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />
+            <span>Menu</span>
           </button>
         </div>
 
@@ -93,7 +95,7 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-0 z-50 bg-background md:hidden flex flex-col"
+               className="fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden flex flex-col"
             >
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <span className="font-serif text-2xl font-bold text-primary">
