@@ -6,6 +6,8 @@ import diningCelebration from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_
 import banquetDining from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_(2)_1786041481390.jpeg';
 import eveningExterior from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_1786041494451.jpeg';
 import restaurantFront from '@assets/WhatsApp_Image_2026-08-05_at_10.06.16_PM_1786041496891.jpeg';
+import decoratedEntrance from '@assets/WhatsApp_Image_2026-07-22_at_10.40.32_PM_1786041694440.jpeg';
+import colorfulBanquet from '@assets/WhatsApp_Image_2026-08-03_at_10.00.22_PM_1786041698497.jpeg';
 
 const galleryImages = [
   {
@@ -27,6 +29,16 @@ const galleryImages = [
     src: restaurantFront,
     alt: 'Nirmal Family Restaurant and Party Hall entrance at night',
     label: 'Restaurant Front',
+  },
+  {
+    src: decoratedEntrance,
+    alt: 'Nirmal Family Restaurant and Party Hall decorated entrance',
+    label: 'Decorated Entrance',
+  },
+  {
+    src: colorfulBanquet,
+    alt: 'Colorful banquet hall filled with guests',
+    label: 'Banquet Hall',
   },
 ];
 
