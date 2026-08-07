@@ -19,6 +19,9 @@ import gulabJamun        from '@assets/menu-gulab-jamun.jpg';
 import besanBarfiPhoto   from '@assets/WhatsApp_Image_2026-08-05_at_11.52.57_PM_1786126928615.jpeg';
 import jalebiPhoto       from '@assets/WhatsApp_Image_2026-08-05_at_11.52.57_PM_(2)_1786126938191.jpeg';
 import stuffedGulabJamunPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.52.57_PM_(1)_1786126940207.jpeg';
+import pistaRoseIceCreamPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.53.01_PM_(2)_1786126969319.jpeg';
+import shahiTukdaPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.53.01_PM_(1)_1786126973320.jpeg';
+import anarPistaIceCreamPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.53.01_PM_1786127097524.jpeg';
 
 type MenuItem = {
   id: string;
@@ -159,6 +162,30 @@ const MENU_ITEMS: MenuItem[] = [
     desc: 'Golden gulab jamun filled with creamy khoya and delicately finished with rose petals.',
     price: 129,
     img: stuffedGulabJamunPhoto,
+    tag: '⭐ Must Try',
+  },
+  {
+    id: 'pista-rose-ice-cream',
+    name: 'Pista Rose Ice Cream',
+    desc: 'Creamy pistachio and rose ice cream topped with roasted pistachios and rose petals.',
+    price: 139,
+    img: pistaRoseIceCreamPhoto,
+    tag: '🌹 Seasonal Special',
+  },
+  {
+    id: 'shahi-tukda',
+    name: 'Shahi Tukda',
+    desc: 'Rich bread pudding soaked in saffron rabri, finished with almonds and candied cherries.',
+    price: 119,
+    img: shahiTukdaPhoto,
+    tag: '👑 Royal',
+  },
+  {
+    id: 'anar-pista-ice-cream',
+    name: 'Anar-Pista Ice Cream',
+    desc: 'Silky vanilla ice cream swirled with pomegranate and topped with pistachios.',
+    price: 139,
+    img: anarPistaIceCreamPhoto,
     tag: '⭐ Must Try',
   },
 ];
