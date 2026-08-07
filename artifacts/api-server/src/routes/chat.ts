@@ -2,6 +2,11 @@ import { Router, type IRouter } from "express";
 
 const router: IRouter = Router();
 
+type ChatHistoryEntry = {
+  role: "user" | "assistant";
+  content: string;
+};
+
 const WEBSITE_KEYWORDS = [
   "nirmal",
   "restaurant",
@@ -50,6 +55,43 @@ const WEBSITE_KEYWORDS = [
   "habri",
   "jashan",
   "whatsapp",
+  "aapke yahan",
+  "yahan kya",
+  "kya milta",
+  "kaun si dish",
+  "kaunsi dish",
+  "khana",
+  "mithai",
+  "shaadi",
+  "function",
+  "sagai",
+  "samay",
+  "pata",
+  "jagah",
+  "number",
+  "daam",
+  "kitne ka",
+  "khulne",
+  "band hone",
+  "kab khul",
+  "रेस्तरां",
+  "रेस्टोरेंट",
+  "पार्टी हॉल",
+  "मेन्यू",
+  "खाना",
+  "मिठाई",
+  "बिरयानी",
+  "पनीर",
+  "बैंक्वेट",
+  "बुकिंग",
+  "समय",
+  "पता",
+  "फोन",
+  "नंबर",
+  "कीमत",
+  "दाम",
+  "कहाँ",
+  "खुलने",
 ];
 
 const RESTAURANT_CONTEXT = `
@@ -112,7 +154,9 @@ function isWebsiteQuestion(message: string, history: unknown[]) {
 router.post("/chat", async (req, res) => {
   const message =
     typeof req.body?.message === "string" ? req.body.message.trim() : "";
-  const history = Array.isArray(req.body?.history) ? req.body.history : [];
+  const history: unknown[] = Array.isArray(req.body?.history)
+    ? req.body.history
+    : [];
 
   if (!message || message.length > 500) {
     res.status(400).json({ error: "Please enter a question under 500 characters." });
@@ -137,14 +181,14 @@ router.post("/chat", async (req, res) => {
 
   const safeHistory = history
     .filter(
-      (entry): entry is { role: "user" | "assistant"; content: string } =>
+      (entry): entry is ChatHistoryEntry =>
         Boolean(entry) &&
         typeof entry === "object" &&
         ["user", "assistant"].includes(String((entry as { role?: unknown }).role)) &&
         typeof (entry as { content?: unknown }).content === "string",
     )
     .slice(-6)
-    .map((entry) => ({
+    .map((entry: ChatHistoryEntry) => ({
       role: entry.role,
       content: entry.content.slice(0, 1000),
     }));

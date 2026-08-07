@@ -1,0 +1,1 @@
+- [AI integration security](ai-integration-security.md) — Keep provider API keys server-side in Replit Secrets; never expose them in browser code or chat.
