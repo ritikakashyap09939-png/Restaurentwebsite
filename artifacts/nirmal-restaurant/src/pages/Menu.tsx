@@ -16,6 +16,9 @@ import gulabRasgullaMix  from '@assets/menu-gulab-rasgulla-mix.jpg';
 import rasgulla          from '@assets/menu-rasgulla.jpg';
 import kalakand          from '@assets/menu-kalakand.jpg';
 import gulabJamun        from '@assets/menu-gulab-jamun.jpg';
+import besanBarfiPhoto   from '@assets/WhatsApp_Image_2026-08-05_at_11.52.57_PM_1786126928615.jpeg';
+import jalebiPhoto       from '@assets/WhatsApp_Image_2026-08-05_at_11.52.57_PM_(2)_1786126938191.jpeg';
+import stuffedGulabJamunPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.52.57_PM_(1)_1786126940207.jpeg';
 
 type MenuItem = {
   id: string;
@@ -133,6 +136,30 @@ const MENU_ITEMS: MenuItem[] = [
     price: 99,
     img: kalakand,
     tag: '🌿 Desi Favourite',
+  },
+  {
+    id: 'besan-barfi',
+    name: 'Besan Barfi',
+    desc: 'Soft, nutty gram-flour fudge finished with golden ghee and a generous topping of almonds.',
+    price: 99,
+    img: besanBarfiPhoto,
+    tag: '🌿 Desi Favourite',
+  },
+  {
+    id: 'jalebi',
+    name: 'Jalebi',
+    desc: 'Crisp saffron-orange spirals soaked in fragrant sugar syrup and finished with pistachios.',
+    price: 89,
+    img: jalebiPhoto,
+    tag: '🔥 Fresh & Hot',
+  },
+  {
+    id: 'stuffed-gulab-jamun',
+    name: 'Stuffed Gulab Jamun',
+    desc: 'Golden gulab jamun filled with creamy khoya and delicately finished with rose petals.',
+    price: 129,
+    img: stuffedGulabJamunPhoto,
+    tag: '⭐ Must Try',
   },
 ];
 
