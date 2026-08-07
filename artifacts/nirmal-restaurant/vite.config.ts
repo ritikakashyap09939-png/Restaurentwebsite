@@ -5,13 +5,9 @@ import { defineConfig } from 'vite';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
-const rawPort = process.env.PORT;
-
-if (!rawPort) {
-  throw new Error(
-    'PORT environment variable is required but was not provided.',
-  );
-}
+// Managed workflows provide PORT. Keep a local default so imported copies
+// also build and preview when started without Replit workflow metadata.
+const rawPort = process.env.PORT || '5173';
 
 const port = Number(rawPort);
 
@@ -19,13 +15,9 @@ if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    'BASE_PATH environment variable is required but was not provided.',
-  );
-}
+// Artifact workflows provide BASE_PATH. Keep a root fallback so an imported
+// copy can still boot when it is started directly or by an older workflow.
+const basePath = process.env.BASE_PATH || '/';
 
 export default defineConfig({
   base: basePath,

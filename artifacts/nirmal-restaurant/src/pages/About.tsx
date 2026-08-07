@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { publicAsset } from '@/lib/paths';
 import { Leaf, ShieldCheck } from 'lucide-react';
 
 export default function About() {
@@ -80,7 +81,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute inset-0 bg-primary rounded-lg transform translate-x-4 translate-y-4 -z-10" />
               <img 
-                src="/images/restaurant-front.jpeg" 
+                src={publicAsset('images/restaurant-front.jpeg')}
                 alt="Nirmal Family Restaurant and Party Hall" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
