@@ -33,6 +33,10 @@ import kesarSandeshPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.20_PM_
 import gulabJamunRabriPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.20_PM_(1)_1786127415162.jpeg';
 import pinkCoconutRollPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.20_PM_1786127418142.jpeg';
 import gulabJamunSundaePhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.21_PM_(1)_1786127420338.jpeg';
+import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
+import dishButterChicken from '@assets/generated_images/dish-butter-chicken.jpg';
+import dishPaneerTikka from '@assets/generated_images/dish-paneer-tikka.jpg';
+import dishDalMakhani from '@assets/generated_images/dish-dal-makhani.jpg';
 
 type MenuItem = {
   id: string;
@@ -287,6 +291,41 @@ const MENU_ITEMS: MenuItem[] = [
   },
 ];
 
+const SPIECY_ITEMS: MenuItem[] = [
+  {
+    id: 'hyderabadi-dum-biryani',
+    name: 'Hyderabadi Dum Biryani',
+    desc: 'Fragrant basmati rice layered with tender marinated meat, herbs and warming spices.',
+    price: 299,
+    img: dishBiryani,
+    tag: '🔥 Chef Special',
+  },
+  {
+    id: 'murgh-makhani',
+    name: 'Murgh Makhani',
+    desc: 'Tender chicken simmered in a rich tomato, butter and aromatic spice gravy.',
+    price: 279,
+    img: dishButterChicken,
+    tag: '🌶️ Popular',
+  },
+  {
+    id: 'sizzling-paneer-tikka',
+    name: 'Sizzling Paneer Tikka',
+    desc: 'Cottage cheese marinated in yogurt and spices, char-grilled with peppers and onions.',
+    price: 229,
+    img: dishPaneerTikka,
+    tag: '🌿 Vegetarian',
+  },
+  {
+    id: 'dal-makhani',
+    name: 'Dal Makhani',
+    desc: 'Slow-cooked black lentils finished with butter, cream and a fragrant spice tempering.',
+    price: 199,
+    img: dishDalMakhani,
+    tag: '⭐ Must Try',
+  },
+];
+
 // ── Animated Card ──────────────────────────────────────────────────────────
 function MenuCard({ item, index }: { item: MenuItem; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -389,7 +428,8 @@ export default function Menu() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-white/70 text-base max-w-md mx-auto"
         >
-          Handcrafted desserts made with love — every bite is a celebration.
+           Handcrafted favourites, from comforting sweets to bold and spicy
+           flavours.
         </motion.p>
 
         {/* Wavy divider */}
@@ -403,7 +443,7 @@ export default function Menu() {
       {/* ── Item count strip ── */}
       <div className="text-center mt-10 mb-2">
         <span className="inline-block bg-[#8B1A1A]/10 text-[#8B1A1A] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
-          🍽️ {MENU_ITEMS.length} Items Available
+           🍽️ {MENU_ITEMS.length + SPIECY_ITEMS.length} Items Available
         </span>
       </div>
 
@@ -415,11 +455,49 @@ export default function Menu() {
         <FloatingDot style={{ width: 14, height: 14, top: '60%', left: '5%' }} />
         <FloatingDot style={{ width: 8,  height: 8,  top: '80%', right: '6%' }} />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {MENU_ITEMS.map((item, i) => (
-            <MenuCard key={item.id} item={item} index={i} />
-          ))}
-        </div>
+        <section aria-labelledby="sweet-special-heading">
+          <div className="flex items-center gap-4 mb-7">
+            <div className="h-px flex-1 bg-[#8B1A1A]/15" />
+            <h2
+              id="sweet-special-heading"
+              className="text-[#8B1A1A] text-3xl md:text-4xl font-bold text-center"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              Sweet Special
+            </h2>
+            <div className="h-px flex-1 bg-[#8B1A1A]/15" />
+          </div>
+          <p className="text-center text-gray-500 max-w-xl mx-auto mb-8">
+            Traditional mithai and indulgent desserts made for every celebration.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            {MENU_ITEMS.map((item, i) => (
+              <MenuCard key={item.id} item={item} index={i} />
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="spiecy-special-heading" className="mt-20">
+          <div className="flex items-center gap-4 mb-7">
+            <div className="h-px flex-1 bg-[#8B1A1A]/15" />
+            <h2
+              id="spiecy-special-heading"
+              className="text-[#8B1A1A] text-3xl md:text-4xl font-bold text-center"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              Spiecy Special
+            </h2>
+            <div className="h-px flex-1 bg-[#8B1A1A]/15" />
+          </div>
+          <p className="text-center text-gray-500 max-w-xl mx-auto mb-8">
+            Bold Indian flavours, sizzling grills and slow-cooked favourites.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            {SPIECY_ITEMS.map((item, i) => (
+              <MenuCard key={item.id} item={item} index={i} />
+            ))}
+          </div>
+        </section>
       </div>
 
       {/* ── Footer note ── */}
