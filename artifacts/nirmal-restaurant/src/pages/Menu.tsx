@@ -29,6 +29,10 @@ import coconutLadooPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.22_PM_
 import boondiLadooPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.23_PM_(2)_1786127271364.jpeg';
 import milkPedaPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.23_PM_(1)_1786127273292.jpeg';
 import gulabJamunPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.23_PM_1786127280640.jpeg';
+import kesarSandeshPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.20_PM_(2)_1786127412197.jpeg';
+import gulabJamunRabriPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.20_PM_(1)_1786127415162.jpeg';
+import pinkCoconutRollPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.20_PM_1786127418142.jpeg';
+import gulabJamunSundaePhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.21_PM_(1)_1786127420338.jpeg';
 
 type MenuItem = {
   id: string;
@@ -248,6 +252,38 @@ const MENU_ITEMS: MenuItem[] = [
     price: 109,
     img: gulabJamunPhoto,
     tag: '🍬 Popular',
+  },
+  {
+    id: 'kesar-sandesh',
+    name: 'Kesar Sandesh',
+    desc: 'Soft Bengali-style milk sweets infused with saffron and finished with pistachio garnish.',
+    price: 119,
+    img: kesarSandeshPhoto,
+    tag: '🌿 Desi Favourite',
+  },
+  {
+    id: 'gulab-jamun-rabri',
+    name: 'Gulab Jamun Rabri',
+    desc: 'Warm gulab jamun served in creamy saffron rabri with almonds and pistachios.',
+    price: 149,
+    img: gulabJamunRabriPhoto,
+    tag: '👑 Royal',
+  },
+  {
+    id: 'pink-coconut-roll',
+    name: 'Pink Coconut Roll',
+    desc: 'Soft pink coconut rolls with a delicate rose flavour and creamy nut-filled centre.',
+    price: 99,
+    img: pinkCoconutRollPhoto,
+    tag: '🌹 Seasonal Special',
+  },
+  {
+    id: 'gulab-jamun-sundae',
+    name: 'Gulab Jamun Sundae',
+    desc: 'Golden gulab jamun layered with vanilla ice cream, caramel, pistachios and rose petals.',
+    price: 179,
+    img: gulabJamunSundaePhoto,
+    tag: '⭐ Must Try',
   },
 ];
 
