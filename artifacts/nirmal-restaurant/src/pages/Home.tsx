@@ -3,11 +3,13 @@ import { useRef, useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Star, Utensils, Users, Music, ChefHat, Award, CalendarCheck } from 'lucide-react';
 import heroBg from '@assets/generated_images/restaurant-exterior.jpg';
-const banquetWedding = '/images/hall-buffet.jpg';
-const weddingPhoto = '/images/wedding.jpg';
 import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
 import dishPaneer from '@assets/generated_images/dish-paneer-tikka.jpg';
 import dishButterChicken from '@assets/generated_images/dish-butter-chicken.jpg';
+import { publicAsset } from '@/lib/paths';
+
+const banquetWedding = publicAsset('images/hall-buffet.jpg');
+const weddingPhoto = publicAsset('images/wedding.jpg');
 
 // ── Variants ──────────────────────────────────────────────────────────────────
 const fadeInUp = {
