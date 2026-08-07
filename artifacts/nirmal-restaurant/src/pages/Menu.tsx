@@ -22,6 +22,13 @@ import stuffedGulabJamunPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.52.5
 import pistaRoseIceCreamPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.53.01_PM_(2)_1786126969319.jpeg';
 import shahiTukdaPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.53.01_PM_(1)_1786126973320.jpeg';
 import anarPistaIceCreamPhoto from '@assets/WhatsApp_Image_2026-08-05_at_11.53.01_PM_1786127097524.jpeg';
+import kajuKatliPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.21_PM_1786127256424.jpeg';
+import mohanthalPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.22_PM_(2)_1786127258776.jpeg';
+import pistaBarfiPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.22_PM_(1)_1786127260790.jpeg';
+import coconutLadooPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.22_PM_1786127268788.jpeg';
+import boondiLadooPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.23_PM_(2)_1786127271364.jpeg';
+import milkPedaPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.23_PM_(1)_1786127273292.jpeg';
+import gulabJamunPhoto from '@assets/WhatsApp_Image_2026-08-06_at_10.56.23_PM_1786127280640.jpeg';
 
 type MenuItem = {
   id: string;
@@ -187,6 +194,60 @@ const MENU_ITEMS: MenuItem[] = [
     price: 139,
     img: anarPistaIceCreamPhoto,
     tag: '⭐ Must Try',
+  },
+  {
+    id: 'kaju-katli',
+    name: 'Kaju Katli',
+    desc: 'Delicate cashew fudge cut into diamond shapes and finished with a shimmer of silver varq.',
+    price: 149,
+    img: kajuKatliPhoto,
+    tag: '⭐ Classic Favourite',
+  },
+  {
+    id: 'mohanthal',
+    name: 'Mohanthal',
+    desc: 'Rich traditional gram-flour fudge roasted in ghee and topped with almonds and pistachios.',
+    price: 109,
+    img: mohanthalPhoto,
+    tag: '🌿 Desi Favourite',
+  },
+  {
+    id: 'pista-barfi',
+    name: 'Pista Barfi',
+    desc: 'Creamy milk barfi layered with fragrant pistachios and gently finished with almonds.',
+    price: 119,
+    img: pistaBarfiPhoto,
+    tag: '🌿 Desi Favourite',
+  },
+  {
+    id: 'coconut-ladoo',
+    name: 'Coconut Ladoo',
+    desc: 'Soft coconut ladoos rolled in a delicate coating and garnished with pistachio and cherry.',
+    price: 99,
+    img: coconutLadooPhoto,
+  },
+  {
+    id: 'boondi-ladoo',
+    name: 'Boondi Ladoo',
+    desc: 'Golden saffron boondi pearls bound into festive ladoos and finished with melon seeds.',
+    price: 89,
+    img: boondiLadooPhoto,
+    tag: '🎉 Festival Special',
+  },
+  {
+    id: 'milk-peda',
+    name: 'Milk Peda',
+    desc: 'Soft, milky peda with a smooth melt-in-the-mouth texture and a light pistachio garnish.',
+    price: 89,
+    img: milkPedaPhoto,
+  },
+  {
+    id: 'gulab-jamun',
+    name: 'Gulab Jamun',
+    desc: 'Warm, golden milk dumplings soaked in fragrant sugar syrup and topped with pistachios.',
+    price: 109,
+    img: gulabJamunPhoto,
+    tag: '🍬 Popular',
   },
 ];
 
