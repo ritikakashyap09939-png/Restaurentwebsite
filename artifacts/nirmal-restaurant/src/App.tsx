@@ -13,6 +13,7 @@ import Banquet from '@/pages/Banquet';
 import Gallery from '@/pages/Gallery';
 import Testimonials from '@/pages/Testimonials';
 import Contact from '@/pages/Contact';
+import Chatbot from '@/components/Chatbot';
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ function AppRouter() {
         </Switch>
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
