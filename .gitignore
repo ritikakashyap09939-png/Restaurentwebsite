@@ -54,3 +54,5 @@ Thumbs.db
 
 # Large binary files
 *.zip
+.vercel
+.env*
