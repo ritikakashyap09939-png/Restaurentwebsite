@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 import chocolateTrifle   from '@assets/menu-chocolate-trifle.jpg';
@@ -395,6 +395,10 @@ function FloatingDot({ style }: { style: React.CSSProperties }) {
 
 // ── Page ──────────────────────────────────────────────────────────────────
 export default function Menu() {
+  useEffect(() => {
+    document.title = 'Nirmal Family Restaurant & Party Hall - Menu';
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FDF8F3] pb-20">
       {/* ── Hero header ── */}

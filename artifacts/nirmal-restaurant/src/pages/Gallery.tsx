@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Images, X } from 'lucide-react';
 
@@ -43,6 +43,10 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+  useEffect(() => {
+    document.title = 'Nirmal Family Restaurant & Party Hall - Gallery';
+  }, []);
+
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   return (

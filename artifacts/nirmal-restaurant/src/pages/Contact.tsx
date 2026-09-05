@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -53,6 +53,10 @@ const fadeUp = {
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Nirmal Family Restaurant & Party Hall - Contact Us';
+  }, []);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),

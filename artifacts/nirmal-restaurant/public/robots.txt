@@ -1,2 +1,18 @@
 User-agent: *
 Allow: /
+
+# Disallow private routes
+Disallow: /api/
+
+# Allow key public pages
+Allow: /
+Allow: /$
+Allow: /about
+Allow: /menu
+Allow: /banquet
+Allow: /contact
+Allow: /gallery
+Allow: /testimonials
+
+# Sitemap location
+Sitemap: https://nirmal-restaurant.vercel.app/sitemap.xml

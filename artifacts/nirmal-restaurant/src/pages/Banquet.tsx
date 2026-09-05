@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -61,6 +61,9 @@ const stats = [
 ];
 
 export default function Banquet() {
+  useEffect(() => {
+    document.title = 'Nirmal Party Hall & Event Venue';
+  }, []);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Parallax
@@ -111,7 +114,7 @@ export default function Banquet() {
             </motion.span>
             <motion.h1
               variants={fadeUp}
-              className="text-4xl md:text-6xl lg:text-7xl font-serif text-white font-bold mb-5 drop-shadow-xl leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-white font-bold mb-5 drop-shadow-xl leading-tight"
             >
               Nirmal Party Hall
             </motion.h1>
@@ -304,7 +307,7 @@ export default function Banquet() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-border sticky top-24"
+            className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-border lg:sticky lg:top-24"
           >
             {/* Gold top accent */}
             <div className="h-1 -mx-8 md:-mx-10 -mt-8 md:-mt-10 mb-8 rounded-t-2xl bg-gradient-to-r from-primary via-secondary to-primary" />

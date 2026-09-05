@@ -191,6 +191,29 @@ pnpm --filter @workspace/db run push-force  # force schema changes
 
 ---
 
+## Backend Info
+
+- **Language:** TypeScript (Node.js)
+- **Folder:** `artifacts/api-server` (package `@workspace/api-server`)
+- **Start command (from `package.json`):** `node --enable-source-maps ./dist/index.mjs`
+- **Build command:** `node ./build.mjs` (bundles with esbuild to `dist/index.mjs`)
+- **Dev script:** `pnpm run dev` (builds, then starts)
+- Port 8080 by default.
+
+---
+
+## SEO / Metadata Files
+
+| File | Purpose |
+|------|---------|
+| `artifacts/nirmal-restaurant/index.html` | Root HTML template used by Vite - base meta/OG/Twitter/canonical tags live here |
+| `artifacts/nirmal-restaurant/src/pages/*.tsx` | Each page sets `document.title` in a `useEffect` |
+| `artifacts/nirmal-restaurant/public/robots.txt` | Crawler rules + Sitemap URL |
+| `artifacts/nirmal-restaurant/public/sitemap.xml` | XML sitemap for all routes |
+| `artifacts/nirmal-restaurant/seo.md` | SEO configuration reference |
+
+---
+
 ## Environment Variables
 
 **Backend (`artifacts/api-server`):**
@@ -204,7 +227,9 @@ pnpm --filter @workspace/db run push-force  # force schema changes
 
 ## Current Task State
 
-> **INITIALIZED** — AGENT.md updated with full architecture including shared libraries. No active tasks yet.
+> **INITIALIZED** - AGENT.md updated with full architecture including shared libraries. No active tasks yet.
+
+> **2026-09-05** - SEO work complete: meta tags in root `index.html`, per-page `document.title` via `useEffect`, `public/robots.txt` + `public/sitemap.xml` using the real domain `https://nirmal-restaurant.vercel.app`. Backend Info and Important Notes sections added to this file.
 
 ---
 
@@ -216,6 +241,17 @@ pnpm --filter @workspace/db run push-force  # force schema changes
 |------|---------------|------|--------|
 | 2026-08-26 | Initial setup | Created AGENT.md with full project documentation | ✅ Done |
 | 2026-08-27 | Architecture audit | Added shared libraries (api-spec, api-zod, api-client-react, db), OpenAPI codegen workflow, Drizzle DB layer, API endpoints table | ✅ Done |
+| 2026-09-05 | SEO + docs pass | Added SEO meta tags (root index.html), per-page titles, robots.txt + sitemap.xml (real domain), fixed mobile responsiveness imports; added Backend Info + Important Notes sections | ✅ Done |
+
+---
+
+## Important Notes for Future Agents
+
+1. **Mobile responsiveness target:** 375px-414px screen widths (small phones / iPhones). Verify fixes at those widths and do not redo already-completed work.
+2. **Never read or modify any `.env` files.**
+3. **Real domain:** `https://nirmal-restaurant.vercel.app` - always use this for canonical, Open Graph, Twitter, and sitemap URLs. Do not use `nirmalrestaurant.com`.
+4. **Encoding:** when editing HTML/markdown, prefer plain ASCII hyphens over em-dashes to avoid garbled characters in some editors.
+5. **Typecheck:** pre-existing framer-motion `ease: number[]` type errors exist in Home/Banquet/Contact variants and are unrelated to feature work. Run `pnpm run typecheck` in `artifacts/nirmal-restaurant` (`tsc -p tsconfig.json --noEmit`) to confirm no new errors.
 
 ---
 

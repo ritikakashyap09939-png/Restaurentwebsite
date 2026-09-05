@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Star, Quote, ThumbsUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -93,6 +93,10 @@ function ReviewCard({ t, index }: { t: typeof testimonials[0]; index: number }) 
 }
 
 export default function Testimonials() {
+  useEffect(() => {
+    document.title = 'Nirmal Family Restaurant & Party Hall - Testimonials';
+  }, []);
+
   return (
     <div className="pt-24 pb-20 bg-[#fdfaf5] min-h-screen overflow-x-hidden">
       <div className="container mx-auto px-4">

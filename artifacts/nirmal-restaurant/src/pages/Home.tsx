@@ -59,6 +59,9 @@ function FloatingDot({ x, y, size, delay }: { x: string; y: string; size: number
 }
 
 export default function Home() {
+  useEffect(() => {
+    document.title = 'Nirmal Family Restaurant & Party Hall';
+  }, []);
   // Hero parallax
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
@@ -69,7 +72,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen overflow-x-hidden">
 
       {/* ── Hero ── */}
-      <section ref={heroRef} className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
         <motion.div
           className="absolute inset-0 z-0 bg-cover bg-center scale-110"
           style={{ backgroundImage: `url(${heroBg})`, y: heroY }}
@@ -84,7 +87,7 @@ export default function Home() {
         <FloatingDot x="5%" y="75%" size={6} delay={0.5} />
 
         <motion.div
-          className="container relative z-20 mx-auto px-8 md:px-16 mt-16"
+          className="container relative z-20 mx-auto px-4 sm:px-8 md:px-16 mt-16"
           style={{ opacity: heroOpacity }}
         >
           <motion.div
@@ -102,7 +105,7 @@ export default function Home() {
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-bold mb-6 leading-tight drop-shadow-lg"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white font-bold mb-6 leading-tight drop-shadow-lg"
             >
               Nirmal Family{' '}
               <motion.span
@@ -124,9 +127,9 @@ export default function Home() {
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-start gap-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
                 <Link
                   href="/contact"
                   className="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-all shadow-lg text-lg min-w-[200px] text-center block"
@@ -134,7 +137,7 @@ export default function Home() {
                   Reserve a Table
                 </Link>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
                 <Link
                   href="/menu"
                   className="bg-transparent border border-white text-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-black transition-all text-lg min-w-[200px] text-center block"
@@ -421,15 +424,15 @@ export default function Home() {
           <motion.p variants={fadeInUp} className="text-lg mb-8 max-w-xl mx-auto opacity-90">
             Join us at Nirmal for lunch or dinner. Walk-ins are welcome, but reservations are recommended for weekends.
           </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.97 }}>
-              <Link href="/contact" className="bg-[#1a0f0f] text-secondary px-8 py-4 rounded-sm font-bold hover:bg-[#2c1f1f] transition-colors uppercase tracking-wider block">
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-6">
+            <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+              <Link href="/contact" className="bg-[#1a0f0f] text-secondary px-8 py-4 rounded-sm font-bold hover:bg-[#2c1f1f] transition-colors uppercase tracking-wider block text-center">
                 Book A Table
               </Link>
             </motion.div>
             <motion.a
               href="tel:+919876543210"
-              className="flex items-center gap-2 font-bold text-lg hover:underline underline-offset-4"
+              className="flex items-center justify-center gap-2 font-bold text-lg hover:underline underline-offset-4"
               whileHover={{ scale: 1.05 }}
             >
               Or call +91 98765 43210

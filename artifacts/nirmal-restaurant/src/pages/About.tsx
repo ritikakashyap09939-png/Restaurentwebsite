@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { publicAsset } from '@/lib/paths';
 import { Leaf, ShieldCheck } from 'lucide-react';
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'Nirmal Family Restaurant & Party Hall - Our Story';
+  }, []);
   return (
     <div className="pt-24 pb-16 bg-background min-h-screen">
       {/* Header */}

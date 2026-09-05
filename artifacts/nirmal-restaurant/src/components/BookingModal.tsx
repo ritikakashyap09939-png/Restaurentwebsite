@@ -121,7 +121,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     </div>
 
                     {/* Date & Time */}
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-[#2C2C2C] mb-1">Date *</label>
                         <input
