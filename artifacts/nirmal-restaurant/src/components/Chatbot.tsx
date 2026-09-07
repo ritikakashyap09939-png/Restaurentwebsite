@@ -68,6 +68,8 @@ const TOUR_STOPS: TourStop[] = [
 
 const NO_SPEECH_MSG = "आपका ब्राउज़र आवाज़ सपोर्ट नहीं करता। टूर बिना आवाज़ के जारी रहेगा।";
 
+const SCROLL_SPEED_PX_PER_SEC = 120;
+
 function supportsSpeechSynthesis() {
   return typeof window !== "undefined" && "speechSynthesis" in window;
 }
@@ -105,6 +107,7 @@ export default function Chatbot() {
   const tourActiveRef = useRef(false);
   const indexRef = useRef(0);
   const isPausedRef = useRef(false);
+  const scrollAnimationRef = useRef({ rafId: null, startY: 0, endY: 0, startTime: 0, duration: 0, running: false });
 
   useEffect(() => {
     tourActiveRef.current = tourActive;
@@ -131,6 +134,36 @@ export default function Chatbot() {
     synth.addEventListener("voiceschanged", load);
     return () => synth.removeEventListener("voiceschanged", load);
   }, []);
+
+  // Smooth scroll down the page while narration plays, paused when tour is paused.
+  useEffect(() => {
+    let animating = true;
+    function step() {
+      if (!animating || !scrollAnimationRef.current.running) return;
+      if (!isPausedRef.current) {
+        const now = performance.now();
+        const elapsed = now - scrollAnimationRef.current.startTime;
+        const progress = Math.min(elapsed / scrollAnimationRef.current.duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentY = scrollAnimationRef.current.startY + (scrollAnimationRef.current.endY - scrollAnimationRef.current.startY) * easeProgress;
+        window.scrollTo({ top: currentY });
+      }
+      const progress = Math.min((performance.now() - scrollAnimationRef.current.startTime) / scrollAnimationRef.current.duration, 1);
+      if (progress < 1 && animating && scrollAnimationRef.current.running && !isPausedRef.current) {
+        scrollAnimationRef.current.rafId = requestAnimationFrame(step);
+      } else {
+        cancelAnimationFrame(scrollAnimationRef.current.rafId);
+        scrollAnimationRef.current.running = false;
+      }
+    }
+    if (tourActive && scrollAnimationRef.current.running && !isPausedRef.current) {
+      scrollAnimationRef.current.rafId = requestAnimationFrame(step);
+    }
+    return () => {
+      animating = false;
+      cancelAnimationFrame(scrollAnimationRef.current.rafId);
+    };
+  }, [tourActive, isPausedRef.current]);
 
   // Stop everything on unmount.
   useEffect(() => {
@@ -160,9 +193,23 @@ export default function Chatbot() {
       return;
     }
 
+    // Calculate scroll duration from script length (rough estimate).
+    const scrollDuration = Math.max(4000, stop.script.length * 75 + 2000);
+
     const synth = window.speechSynthesis;
     const id = ++speakingIdRef.current;
     synth.cancel();
+    // Record start scroll position and target end position for smooth scroll.
+    const startY = window.scrollY;
+    const endY = startY + Math.min(window.innerHeight * 1.5, document.body.scrollHeight - window.innerHeight);
+    scrollAnimationRef.current = {
+      rafId: null,
+      startY: startY,
+      endY: endY,
+      startTime: performance.now(),
+      duration: scrollDuration,
+      running: true,
+    };
     timerRef.current = window.setTimeout(() => {
       if (speakingIdRef.current !== id) return;
       const utterance = new SpeechSynthesisUtterance(stop.script);
@@ -175,6 +222,7 @@ export default function Chatbot() {
       utterance.onend = () => {
         if (speakingIdRef.current !== id) return;
         clearTimer();
+        scrollAnimationRef.current.running = false;
         timerRef.current = window.setTimeout(() => advance(), 900);
       };
       utterance.onerror = (event) => {
@@ -214,6 +262,15 @@ export default function Chatbot() {
       speakingIdRef.current += 1;
       window.speechSynthesis.cancel();
     }
+    // Reset scroll animation when advancing to next stop.
+    scrollAnimationRef.current = {
+      rafId: null,
+      startY: 0,
+      endY: 0,
+      startTime: 0,
+      duration: 0,
+      running: false,
+    };
     setIsPaused(false);
     const next = indexRef.current + 1;
     if (next < TOUR_STOPS.length) {
@@ -233,6 +290,15 @@ export default function Chatbot() {
       speakingIdRef.current += 1;
       window.speechSynthesis.cancel();
     }
+    // Reset scroll animation when tour finishes.
+    scrollAnimationRef.current = {
+      rafId: null,
+      startY: 0,
+      endY: 0,
+      startTime: 0,
+      duration: 0,
+      running: false,
+    };
     setTourActive(false);
     setTourIndex(0);
     setIsPaused(false);
