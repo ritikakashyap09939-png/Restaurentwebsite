@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import NotFound from '@/pages/not-found';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import DemoBanner from '@/components/DemoBanner';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Banquet from '@/pages/Banquet';
@@ -28,6 +29,7 @@ function AppRouter() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      <DemoBanner />
       <Navbar />
       <main className="flex-1">
         <Switch>
