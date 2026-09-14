@@ -8,7 +8,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
-import Menu from '@/pages/Menu';
 import Banquet from '@/pages/Banquet';
 import Gallery from '@/pages/Gallery';
 import Testimonials from '@/pages/Testimonials';
@@ -34,7 +33,6 @@ function AppRouter() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/menu" component={Menu} />
           <Route path="/banquet" component={Banquet} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/testimonials" component={Testimonials} />

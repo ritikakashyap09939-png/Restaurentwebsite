@@ -1,15 +1,12 @@
 import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { Link } from 'wouter';
-import { ArrowRight, Star, Utensils, Users, Music, ChefHat, Award, CalendarCheck } from 'lucide-react';
-import heroBg from '@assets/generated_images/restaurant-exterior.jpg';
-import dishBiryani from '@assets/generated_images/dish-biryani.jpg';
-import dishPaneer from '@assets/generated_images/dish-paneer-tikka.jpg';
-import dishButterChicken from '@assets/generated_images/dish-butter-chicken.jpg';
+import { ArrowRight, Star, Users, Music, Award, CalendarCheck, Sparkles, Heart } from 'lucide-react';
+import heroBg from '@assets/generated_images/restaurant-exterior.webp';
 import { publicAsset } from '@/lib/paths';
 
-const banquetWedding = publicAsset('images/hall-buffet.jpg');
-const weddingPhoto = publicAsset('images/wedding.jpg');
+const banquetWedding = publicAsset('images/hall-buffet.webp');
+const weddingPhoto = publicAsset('images/wedding.webp');
 
 // ── Variants ──────────────────────────────────────────────────────────────────
 const fadeInUp = {
@@ -61,6 +58,8 @@ function FloatingDot({ x, y, size, delay }: { x: string; y: string; size: number
 export default function Home() {
   useEffect(() => {
     document.title = 'Nirmal Family Restaurant & Party Hall';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', 'Nirmal Family Restaurant & Party Hall — a premium event venue with a 500-guest banquet hall on Habri Road, Gausala Market. Weddings, birthdays, and corporate events.');
   }, []);
   // Hero parallax
   const heroRef = useRef<HTMLDivElement>(null);
@@ -100,7 +99,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-secondary font-medium tracking-[0.3em] uppercase text-sm md:text-base block mb-4"
             >
-              Tradition in Every Bite
+              Elegant Venue
             </motion.span>
 
             <motion.h1
@@ -113,7 +112,7 @@ export default function Home() {
                 animate={{ textShadow: ['0 0 0px #d4a853', '0 0 20px #d4a853', '0 0 0px #d4a853'] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               >
-                Restaurant
+                Event Space
               </motion.span>{' '}
               and Party Hall
             </motion.h1>
@@ -122,29 +121,29 @@ export default function Home() {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 mb-10 font-light drop-shadow"
             >
-              A heritage of authentic Indian flavors, serving families with love, warmth, and spices passed down through generations.
+              A premium event destination for weddings, birthdays, corporate functions, and celebrations. Our 500-guest banquet hall provides the perfect setting for your special occasion, with elegant spaces and exceptional service.
             </motion.p>
 
             <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
-                <Link
-                  href="/contact"
-                  className="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-all shadow-lg text-lg min-w-[200px] text-center block"
-                >
-                  Reserve a Table
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
-                <Link
-                  href="/menu"
-                  className="bg-transparent border border-white text-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-black transition-all text-lg min-w-[200px] text-center block"
-                >
-                  View Menu
-                </Link>
-              </motion.div>
+<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+                 <Link
+                   href="/contact"
+                   className="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-primary/90 transition-all shadow-lg text-lg min-w-[200px] text-center block"
+                 >
+                   Enquire Now
+                 </Link>
+               </motion.div>
+               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+                 <Link
+                   href="/banquet"
+                   className="bg-transparent border border-white text-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-black transition-all text-lg min-w-[200px] text-center block"
+                 >
+                   View Hall Details
+                 </Link>
+               </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -175,10 +174,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { icon: ChefHat, value: 25, suffix: '+', label: 'Years of Legacy' },
-              { icon: Utensils, value: 150, suffix: '+', label: 'Signature Dishes' },
+              { icon: Award, value: 25, suffix: '+', label: 'Years of Legacy' },
+              { icon: CalendarCheck, value: 150, suffix: '+', label: 'Events Hosted' },
               { icon: Users, value: 500, suffix: '', label: 'Guests Capacity' },
-              { icon: Award, value: 10, suffix: 'K+', label: 'Happy Families' },
+              { icon: Heart, value: 10, suffix: 'K+', label: 'Happy Families' },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -233,7 +232,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             />
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg">
-              We believe dining is an event. That's why we bring the finest ingredients, masterful chefs, and an ambiance that makes you feel at home.
+              We believe every celebration deserves a perfect setting. That's why we offer elegant spaces, seamless event planning, and warm hospitality that makes every occasion truly special.
             </motion.p>
           </motion.div>
 
@@ -245,9 +244,9 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {[
-              { icon: Utensils, title: 'Heritage Recipes', desc: 'Our spice blends are made in-house using recipes perfected over decades.' },
+              { icon: Sparkles, title: 'Elegant Spaces', desc: 'Beautifully designed banquet halls crafted for memorable celebrations and grand events.' },
               { icon: Users, title: 'Family Atmosphere', desc: 'Warm, welcoming spaces designed for celebrations and togetherness.' },
-              { icon: Star, title: 'Premium Quality', desc: 'Uncompromising hygiene standards and the freshest local produce.' },
+              { icon: Star, title: 'Premium Service', desc: 'Impeccable event management, décor, and attention to every detail.' },
             ].map((feature, i) => (
               <motion.div
                 key={i}
@@ -267,73 +266,6 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* ── Featured Dishes ── */}
-      <section className="py-20 bg-[#fdfaf5] border-y border-border">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={staggerContainer}
-            className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
-          >
-            <motion.div variants={fadeInLeft} className="max-w-2xl">
-              <span className="text-secondary font-bold uppercase tracking-wider text-sm mb-2 block">Our Signatures</span>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary">Flavors to Remember</h2>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <Link href="/menu" className="group flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors">
-                Explore Full Menu{' '}
-                <motion.span
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </motion.span>
-              </Link>
-            </motion.div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { img: dishBiryani, name: 'Hyderabadi Dum Biryani', desc: 'Slow-cooked fragrant basmati rice with tender marinated meat.' },
-              { img: dishButterChicken, name: 'Murgh Makhani', desc: 'Classic butter chicken in a rich, creamy tomato and cashew gravy.' },
-              { img: dishPaneer, name: 'Sizzling Paneer Tikka', desc: 'Cottage cheese marinated in yogurt and spices, char-grilled to perfection.' },
-            ].map((dish, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6 }}
-                className="group cursor-pointer bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-shadow"
-              >
-                <div className="h-64 overflow-hidden relative">
-                  <motion.img
-                    src={dish.img}
-                    alt={dish.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-primary/20"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-bold mb-2 group-hover:text-primary transition-colors">{dish.name}</h3>
-                  <p className="text-muted-foreground">{dish.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -419,23 +351,23 @@ export default function Home() {
           className="container mx-auto px-4 relative z-10"
         >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif font-bold mb-4">
-            Ready for a memorable meal?
+            Ready to plan your celebration?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg mb-8 max-w-xl mx-auto opacity-90">
-            Join us at Nirmal for lunch or dinner. Walk-ins are welcome, but reservations are recommended for weekends.
+            Contact us to discuss your event requirements. Walk-ins are welcome, but advance booking is recommended for weekends.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-6">
             <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
               <Link href="/contact" className="bg-[#1a0f0f] text-secondary px-8 py-4 rounded-sm font-bold hover:bg-[#2c1f1f] transition-colors uppercase tracking-wider block text-center">
-                Book A Table
+                Get in Touch
               </Link>
             </motion.div>
             <motion.a
-              href="tel:+919876543210"
+              href="tel:+919813954399"
               className="flex items-center justify-center gap-2 font-bold text-lg hover:underline underline-offset-4"
               whileHover={{ scale: 1.05 }}
             >
-              Or call +91 98765 43210
+              Or call +91 98139 54399
             </motion.a>
           </motion.div>
         </motion.div>

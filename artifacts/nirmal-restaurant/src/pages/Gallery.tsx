@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Images, X } from 'lucide-react';
 
-import diningCelebration from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_(3)_1786041479374.jpeg';
-import banquetDining from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_(2)_1786041481390.jpeg';
-import eveningExterior from '@assets/WhatsApp_Image_2026-08-05_at_10.03.40_PM_1786041494451.jpeg';
-import restaurantFront from '@assets/WhatsApp_Image_2026-08-05_at_10.06.16_PM_1786041496891.jpeg';
-import decoratedEntrance from '@assets/WhatsApp_Image_2026-07-22_at_10.40.32_PM_1786041694440.jpeg';
-import colorfulBanquet from '@assets/WhatsApp_Image_2026-08-03_at_10.00.22_PM_1786041698497.jpeg';
+import diningCelebration from '@assets/dining-celebration.webp';
+import banquetDining from '@assets/banquet-dining.webp';
+import eveningExterior from '@assets/evening-exterior.webp';
+import restaurantFront from '@assets/restaurant-front-night.webp';
+import decoratedEntrance from '@assets/decorated-entrance.webp';
+import banquetHallWithGuests from '@assets/banquet-hall-with-guests.webp';
+import banquetHallAdditionalView from '@assets/banquet-hall-additional-view.webp';
 
 const galleryImages = [
   {
@@ -36,15 +37,22 @@ const galleryImages = [
     label: 'Decorated Entrance',
   },
   {
-    src: colorfulBanquet,
-    alt: 'Colorful banquet hall filled with guests',
+    src: banquetHallWithGuests,
+    alt: 'Guests seated at an elegantly decorated table in the banquet hall',
     label: 'Banquet Hall',
+  },
+  {
+    src: banquetHallAdditionalView,
+    alt: 'Another angle of the elegantly decorated banquet hall',
+    label: 'Banquet Hall View',
   },
 ];
 
 export default function Gallery() {
   useEffect(() => {
-    document.title = 'Nirmal Family Restaurant & Party Hall - Gallery';
+    document.title = 'Nirmal Party Hall & Event Venue - Gallery';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', 'Browse photos of Nirmal Party Hall — our spacious banquet hall, decorated entrance, elegant event setups, and memorable celebration moments.');
   }, []);
 
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -76,7 +84,7 @@ export default function Gallery() {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A glimpse into the Nirmal experience — our space, our food, and the moments we help create.
+            A glimpse into the Nirmal experience — our venue, our event setups, and the moments we help create.
           </p>
         </motion.div>
 

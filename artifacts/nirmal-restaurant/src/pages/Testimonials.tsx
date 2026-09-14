@@ -94,7 +94,9 @@ function ReviewCard({ t, index }: { t: typeof testimonials[0]; index: number }) 
 
 export default function Testimonials() {
   useEffect(() => {
-    document.title = 'Nirmal Family Restaurant & Party Hall - Testimonials';
+    document.title = 'Nirmal Party Hall & Event Venue - Testimonials';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', 'Read genuine guest reviews of Nirmal Party Hall. See why families and corporates trust our banquet venue, professional service, and unforgettable celebration experiences.');
   }, []);
 
   return (
@@ -161,7 +163,7 @@ export default function Testimonials() {
                 ))}
               </div>
               <div className="text-sm text-muted-foreground font-medium">Based on 1,200+ Reviews</div>
-              <div className="text-xs text-muted-foreground">Google · Zomato · Swiggy</div>
+              <div className="text-xs text-muted-foreground">Google Reviews</div>
             </div>
           </motion.div>
         </motion.div>

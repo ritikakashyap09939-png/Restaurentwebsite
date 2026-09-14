@@ -6,11 +6,13 @@ import { Leaf, ShieldCheck } from 'lucide-react';
 export default function About() {
   useEffect(() => {
     document.title = 'Nirmal Family Restaurant & Party Hall - Our Story';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', 'Learn the story behind Nirmal Family Restaurant & Party Hall — a family-rooted event venue known for its elegant banquet hall, warm hospitality, and commitment to celebration since 2025.');
   }, []);
   return (
     <div className="pt-24 pb-16 bg-background min-h-screen">
       {/* Header */}
-      <div className="container mx-auto px-4 text-center mb-16">
+      <header className="container mx-auto px-4 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -19,10 +21,10 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-4">Our Story</h1>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6 rounded-full" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Rooted in family, seasoned with love. The journey of Nirmal Restaurant.
+            Rooted in family, built for celebration. The journey of Nirmal Event Venue.
           </p>
         </motion.div>
-      </div>
+      </header>
 
       <div className="container mx-auto px-4">
         {/* Story Section */}
@@ -37,29 +39,28 @@ export default function About() {
             <h2 className="text-3xl font-serif font-bold text-primary mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
               <p>
-                In 2025, a small dream took shape — the dream of creating a place where flavor, warmth, 
-                and celebration come together. That dream became Neelam Restaurant &amp; Party Hall.
+                In 2025, a small dream took shape — the dream of creating a place where warmth, 
+                and celebration come together. That dream became Nirmal Family Restaurant &amp; Party Hall.
               </p>
               <p>
-                We believe food is never just about filling a plate — it's about bringing people closer. 
-                With that belief, we built a space where traditional flavors meet modern hospitality. 
-                Every dish in our kitchen is prepared with care, using fresh ingredients and authentic 
-                spices, so every bite feels like home.
+                We believe a celebration is never just about the occasion — it's about bringing people closer. 
+                With that belief, we built a space where elegance meets modern hospitality. 
+                Every gathering we host is prepared with care, so every moment feels like home.
               </p>
               <p>
-                But Neelam is more than just a restaurant. Our elegant Party Hall is designed to be part 
+                Nirmal is more than just a venue. Our elegant Party Hall is designed to be part 
                 of your most special moments — weddings, birthdays, anniversaries, or any family 
                 celebration. We believe every event deserves to be memorable, which is why our team 
-                takes care of every little detail, from décor to the quality of food on your table.
+                takes care of every little detail, from décor to the comfort of your guests.
               </p>
               <p>
                 Since day one, we've had one simple goal — to make every guest feel like family. 
-                Welcoming you warmly, serving you our best, and being part of your happiest moments — 
+                Welcoming you warmly, hosting you at our best, and being part of your happiest moments — 
                 that's what truly matters to us.
               </p>
               <p>
-                So the next time you're looking for great food and a place to celebrate — Neelam 
-                Restaurant &amp; Party Hall is waiting for you.
+                So the next time you're looking for a special venue to celebrate — Nirmal 
+                Family Restaurant &amp; Party Hall is waiting for you.
               </p>
             </div>
             
@@ -85,7 +86,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute inset-0 bg-primary rounded-lg transform translate-x-4 translate-y-4 -z-10" />
               <img 
-                src={publicAsset('images/restaurant-front.jpeg')}
+                src={publicAsset('images/restaurant-front.webp')}
                 alt="Nirmal Family Restaurant and Party Hall" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
@@ -94,11 +95,11 @@ export default function About() {
         </div>
 
         {/* Values Section */}
-        <div className="bg-white rounded-xl shadow-sm border border-border p-8 md:p-12 mb-20">
+        <section className="bg-white rounded-xl shadow-sm border border-border p-8 md:p-12 mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-serif font-bold text-primary mb-4">Our Core Values</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide every dish we serve and every guest we welcome.
+              The principles that guide every event we host and every guest we welcome.
             </p>
           </div>
 
@@ -150,10 +151,10 @@ export default function About() {
               </p>
             </motion.div>
           </div>
-        </div>
+        </section>
 
         {/* Certifications Section */}
-        <div className="mb-16 -mx-4 px-0">
+        <section className="mb-16 -mx-4 px-0">
           {/* Dark maroon banner background */}
           <div className="bg-[#3a0f1e] rounded-2xl overflow-hidden shadow-2xl">
             {/* Top decorative border */}
@@ -331,7 +332,7 @@ export default function About() {
             {/* Bottom decorative border */}
             <div className="h-1 w-full bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]" />
           </div>
-        </div>
+        </section>
 
       </div>
     </div>

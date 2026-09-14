@@ -1,4 +1,4 @@
-# SEO Configuration - Nirmal Family Restaurant
+# SEO Configuration - Nirmal Party Hall & Event Venue
 
 ## Meta Tags
 
@@ -7,33 +7,32 @@
 ```html
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Nirmal Family Restaurant & Party Hall - Authentic Indian flavors in Habri Road, Gausala Market. Book tables, host events, and celebrate special occasions with us." />
-<meta name="keywords" content="nirmal restaurant, indian restaurant, habri road, gausala market, party hall, wedding venue, corporate events, family dining" />
-<meta name="author" content="Nirmal Family Restaurant" />
-<title>Nirmal Family Restaurant & Party Hall</title>
+<meta name="description" content="Nirmal Party Hall & Event Venue - A premium banquet hall on Habri Road, Gausala Market. Book weddings, birthdays, corporate events, and celebrations for up to 500 guests." />
+<meta name="keywords" content="nirmal party hall, banquet hall, habri road, gausala market, wedding venue, corporate events, event venue, celebration hall, party hall near me" />
+<meta name="author" content="Nirmal Party Hall" />
+<title>Nirmal Party Hall & Event Venue</title>
 ```
 
 ### Page-specific meta tags
 
 | Page | title | description |
 |------|-------|-------------|
-| Home | Nirmal Family Restaurant & Party Hall | Authentic Indian flavors, heritage restaurant in Habri Road. Book tables for lunch or dinner. Walk-ins welcome. |
-| About | Nirmal Family Restaurant & Party Hall - Our Story | Rooted in family, seasoned with love. The journey of Nirmal Restaurant since 2025. |
-| Menu | Nirmal Family Restaurant & Party Hall - Menu | Authentic Indian cuisine menu. Discover our dishes and flavors at Nirmal Restaurant. |
+| Home | Nirmal Family Restaurant & Party Hall | Nirmal Family Restaurant & Party Hall - a premium event venue with a 500-guest banquet hall on Habri Road, Gausala Market. Weddings, birthdays, and corporate events. |
+| About | Nirmal Family Restaurant & Party Hall - Our Story | Learn the story behind Nirmal Family Restaurant & Party Hall - a family-rooted event venue known for its elegant banquet hall, warm hospitality, and commitment to celebration since 2025. |
 | Banquet | Nirmal Party Hall & Event Venue | Host your cherished moments at Nirmal Party Hall. Weddings, corporate events, parties up to 500 guests. |
 | Contact | Nirmal Family Restaurant & Party Hall - Contact Us | Get in touch. Location: Habri Road, Gausala Market. +91 98139 54399. Open daily. |
-| Gallery | Nirmal Family Restaurant & Party Hall - Gallery | View our hall, events, and dining setup. Celebrate special moments at Nirmal. |
-| Testimonials | Nirmal Family Restaurant & Party Hall - Testimonials | What our guests say about their experiences at Nirmal Family Restaurant. |
+| Gallery | Nirmal Party Hall & Event Venue - Gallery | Browse photos of Nirmal Party Hall — our spacious banquet hall, decorated entrance, elegant event setups, and memorable celebration moments. |
+| Testimonials | Nirmal Party Hall & Event Venue - Testimonials | Read genuine guest reviews of Nirmal Party Hall. See why families and corporates trust our banquet venue, professional service, and unforgettable celebration experiences. |
 
 ## OG (Open Graph) Tags
 
 ```html
-<meta property="og:title" content="Nirmal Family Restaurant & Party Hall" />
-<meta property="og:description" content="Authentic Indian flavors in Habri Road, Gausala Market. Book tables, host events, and celebrate special occasions with us." />
+<meta property="og:title" content="Nirmal Party Hall & Event Venue" />
+<meta property="og:description" content="A premium banquet hall on Habri Road, Gausala Market. Weddings, birthdays, corporate events, and celebrations for up to 500 guests." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nirmal-restaurant.vercel.app" />
-<meta property="og:image" content="https://nirmal-restaurant.vercel.app/images/exterior.jpg" />
-<meta property="og:site_name" content="Nirmal Family Restaurant" />
+<meta property="og:image" content="https://nirmal-restaurant.vercel.app/images/exterior.webp" />
+<meta property="og:site_name" content="Nirmal Party Hall" />
 <meta property="og:locale" content="en_IN" />
 ```
 
@@ -41,9 +40,9 @@
 
 ```html
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Nirmal Family Restaurant & Party Hall" />
-<meta name="twitter:description" content="Authentic Indian flavors in Habri Road, Gausala Market. Book tables, host events, and celebrate special occasions with us." />
-<meta name="twitter:image" content="https://nirmal-restaurant.vercel.app/images/exterior.jpg" />
+<meta name="twitter:title" content="Nirmal Party Hall & Event Venue" />
+<meta name="twitter:description" content="A premium banquet hall on Habri Road, Gausala Market. Weddings, birthdays, corporate events, and celebrations for up to 500 guests." />
+<meta name="twitter:image" content="https://nirmal-restaurant.vercel.app/images/exterior.webp" />
 <meta name="twitter:site" content="@nirmalrestaurant" />
 <meta name="twitter:creator" content="@nirmalrestaurant">
 ```
@@ -68,7 +67,6 @@ Disallow: /api/
 Allow: /
 Allow: /$
 Allow: /about
-Allow: /menu
 Allow: /banquet
 Allow: /contact
 Allow: /gallery
@@ -93,12 +91,6 @@ Create `sitemap.xml` at the root with the following entries:
   </url>
   <url>
     <loc>https://nirmal-restaurant.vercel.app/about</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nirmal-restaurant.vercel.app/menu</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

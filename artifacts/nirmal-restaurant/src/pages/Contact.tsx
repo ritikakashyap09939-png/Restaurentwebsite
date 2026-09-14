@@ -56,6 +56,8 @@ export default function Contact() {
 
   useEffect(() => {
     document.title = 'Nirmal Family Restaurant & Party Hall - Contact Us';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', 'Get in touch with Nirmal Family Restaurant & Party Hall. Find our location on Habri Road, Gausala Market, call us, or send a message for reservations and event inquiries.');
   }, []);
 
   const form = useForm<FormValues>({

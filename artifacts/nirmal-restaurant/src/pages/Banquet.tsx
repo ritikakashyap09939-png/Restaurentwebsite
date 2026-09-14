@@ -8,9 +8,9 @@ import {
   PartyPopper, Briefcase, Heart, Star, Gift, Coffee
 } from 'lucide-react';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import banquetCorporate from '@assets/generated_images/banquet-corporate.jpg';
-import heroBg from '@assets/generated_images/hero-bg.jpg';
-import banquetHeroReal from '@assets/banquet-hall-real.jpg';
+import banquetCorporate from '@assets/generated_images/banquet-corporate.webp';
+import heroBg from '@assets/generated_images/hero-bg.webp';
+import banquetHeroReal from '@assets/banquet-hall-real.webp';
 
 const HERO_IMG = banquetHeroReal;
 
@@ -41,7 +41,11 @@ const stagger = {
 const features = [
   { icon: Users, title: 'Spacious Capacity', desc: 'Accommodates up to 500 guests comfortably, ideal for grand weddings and grand functions.' },
   { icon: Wind,  title: 'Fully Air-Conditioned', desc: 'Climate-controlled environment ensuring comfort for your guests in any season.' },
-  { icon: Cake,  title: 'Custom Packages', desc: 'Tailored catering, decoration, and DJ services to match your exact requirements.' },
+  { icon: Cake,  title: 'Custom Packages', desc: 'Tailored catering and decoration to match your exact requirements.' },
+  { icon: Gift,  title: 'Guest Rooms', desc: 'AC and non-AC guest rooms available for out-of-town guests.' },
+  { icon: Heart, title: 'Changing/Bridal Room', desc: 'Dedicated changing area and bridal room for pre-event preparations.' },
+  { icon: Coffee, title: 'Power Backup Generator', desc: 'Reliable generator ensures uninterrupted power supply for your event.' },
+  { icon: Star, title: 'Lift/Elevator', desc: 'Serving all 4 floors for easy accessibility.' },
 ];
 
 const events = [
@@ -63,6 +67,8 @@ const stats = [
 export default function Banquet() {
   useEffect(() => {
     document.title = 'Nirmal Party Hall & Event Venue';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', 'Book Nirmal Party Hall for weddings, birthdays, corporate events, and celebrations. A fully air-conditioned, 500-guest capacity banquet venue with custom catering and decoration packages.');
   }, []);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -245,7 +251,6 @@ export default function Banquet() {
                   {[
                     { label: 'Total Area', value: '4,500 sq ft' },
                     { label: 'Dining Area', value: 'Separate' },
-                    { label: 'Valet Parking', value: 'Available' },
                     { label: 'Bridal Rooms', value: '2 Included' },
                   ].map((item, i) => (
                     <motion.div
