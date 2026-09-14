@@ -36,7 +36,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          'fixed top-10 left-0 right-0 z-50 transition-all duration-300 border-b',
+          'relative w-full transition-all duration-300 border-b',
           isScrolled
             ? 'bg-background/98 backdrop-blur-md shadow-md border-border py-2'
             : 'bg-background/95 backdrop-blur-sm shadow-sm border-border py-3'
@@ -77,7 +77,7 @@ export default function Navbar() {
               onClick={() => setBookingOpen(true)}
               className="bg-primary text-primary-foreground px-3 xl:px-4 py-1.5 rounded-sm font-medium hover:bg-primary/90 transition-colors shadow-sm uppercase tracking-wide text-xs xl:text-sm cursor-pointer whitespace-nowrap"
             >
-              Book Table
+              Book Venue
             </button>
 
             {/* Mobile hamburger */}
@@ -136,7 +136,7 @@ export default function Navbar() {
                       }}
                       className="mt-4 w-full rounded-md bg-primary px-4 py-3 text-center text-sm font-medium uppercase tracking-wide text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer"
                     >
-                      Book a Table
+                      Book Venue
                     </button>
                   </nav>
                 </div>

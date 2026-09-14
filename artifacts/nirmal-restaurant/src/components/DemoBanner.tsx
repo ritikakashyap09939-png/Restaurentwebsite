@@ -1,9 +1,12 @@
 export default function DemoBanner() {
   return (
-    <div className="fixed top-0 inset-x-0 z-40 h-10 flex items-center justify-center bg-[#fbf0cd] border-b border-[#e5d7a3] px-2 sm:px-3 text-center">
-      <p className="text-[10px] sm:text-[11px] leading-tight text-[#7a6a28]">
-        This is a demo website for practice only &mdash; Nirmal Family
-        Restaurant &amp; Party Hall is not a real, operational business.
+    <div className="relative w-full bg-primary text-white border-b border-black/20 px-3 py-1.5 text-center">
+      <p
+        className="text-sm leading-snug"
+        style={{ fontFamily: "'Lato', 'Mukta', 'Noto Sans Devanagari', 'Segoe UI', sans-serif" }}
+      >
+        यह एक डेमो वेबसाइट है जो सिर्फ प्रैक्टिस के लिए बनाई गई है, ये निर्मल
+        रेस्टोरेंट एंड पार्टी हॉल की असली वेबसाइट नहीं है।
       </p>
     </div>
   );

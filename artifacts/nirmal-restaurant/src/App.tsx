@@ -29,8 +29,11 @@ function AppRouter() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
-      <DemoBanner />
-      <Navbar />
+      <div className="fixed top-0 inset-x-0 z-40">
+        <DemoBanner />
+        <Navbar />
+      </div>
+      <div className="h-10 md:h-0" aria-hidden="true" />
       <main className="flex-1">
         <Switch>
           <Route path="/" component={Home} />
